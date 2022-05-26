@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "PagoUISPM",
+    name: "PagoUI",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "PagoUISPM",
+            name: "PagoUI",
             targets: ["PagoUISPM"]),
     ],
     dependencies: [
