@@ -80,7 +80,8 @@ public extension UIView {
     }
     
     class func loadFromNib<T>() -> T where T: UIView {
-        let bundle = Bundle(identifier: "com.pago.PagoUI")
+//        let bundle = Bundle(identifier: "com.pago.PagoUI")
+        let bundle = Bundle.module
         let nib = UINib(nibName: String(describing: T.self), bundle: bundle).instantiate(withOwner: nil, options: nil).first as! T
         return nib
     }
