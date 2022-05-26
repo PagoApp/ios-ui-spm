@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol BaseTableViewScrollDelegate: class {
+public protocol BaseTableViewScrollDelegate: AnyObject {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView)
@@ -87,14 +87,14 @@ extension BaseTableViewController: BaseScrollableViewControllerPresenterView {
     public func showLoader() {
         
         DispatchQueue.main.async { [weak self] in
-            self?.showLoadingView()
+            self?.showOverlayLoading()
         }
     }
     
     public func hideLoader() {
         
         DispatchQueue.main.async { [weak self] in
-            self?.hideLoadingView()
+            self?.hideOverlayLoading()
         }
     }
 }

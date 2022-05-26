@@ -17,7 +17,7 @@ protocol PagoGiphyPresenterView: PresenterView {
 }
 
 @available(iOS 13.0, *)
-protocol PagoGiphyPresenterDelegate: class {
+protocol PagoGiphyPresenterDelegate: AnyObject {
     func didDismissGiphy(presenter: PagoGiphyPresenter)
     func didLoadGif()
 }

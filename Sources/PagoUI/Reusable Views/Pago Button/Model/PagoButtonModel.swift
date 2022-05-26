@@ -24,9 +24,9 @@ public struct PagoButtonModel: Model {
     public var width: CGFloat?
     public var height: CGFloat?
     //NOTE(Qsa): If we don't provide a custom text for accessibility, we will just add the button's title
-    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitButton)
+    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.button)
     
-    public init(title: String? = nil, highlightedText: String? = nil, imageView: PagoImageViewModel? = nil, isEnabled: Bool = true, isSelfSized: Bool = false, index: Int = 0, style: PagoButtonStyle,  highlightedStyle: PagoButtonStyle? = nil, inactiveStyle: PagoButtonStyle? = nil, badge: PagoBadgePredicate? = nil, width: CGFloat? = nil, height: CGFloat? = nil, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitButton)) {
+    public init(title: String? = nil, highlightedText: String? = nil, imageView: PagoImageViewModel? = nil, isEnabled: Bool = true, isSelfSized: Bool = false, index: Int = 0, style: PagoButtonStyle,  highlightedStyle: PagoButtonStyle? = nil, inactiveStyle: PagoButtonStyle? = nil, badge: PagoBadgePredicate? = nil, width: CGFloat? = nil, height: CGFloat? = nil, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.button)) {
         
         self.title = title
         self.highlightedText = highlightedText

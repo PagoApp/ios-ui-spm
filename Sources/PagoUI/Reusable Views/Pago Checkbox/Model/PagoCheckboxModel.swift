@@ -19,7 +19,7 @@ public struct PagoCheckboxModel: Model {
     public var errorStyle: PagoCheckboxStyle?
     public var hasInfo = false
     public let transitionTime: Double = 0.15
-    public var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitButton)
+    public var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.button)
     
     public init(title: String? = nil, highlightedText: String? = nil, isSelected: Bool = false, selectedStyle: PagoCheckboxStyle, deselectedStyle: PagoCheckboxStyle, errorStyle: PagoCheckboxStyle? = nil, hasInfo: Bool = false, transitionTime: Double = 0.15, accessibility: PagoAccessibility) {
         

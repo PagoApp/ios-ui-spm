@@ -6,7 +6,7 @@
 //  Copyright © 2019 cleversoft. All rights reserved.
 //
 
-public protocol PresenterView: class {
+public protocol PresenterView: AnyObject {
     
     func reloadView()
 

@@ -16,9 +16,9 @@ public struct PagoLabelModel: Model {
     public var placeholders: [PagoPlaceholderModel]?
     public var style = PagoLabelStyle()
     public var hasAction: Bool = false
-    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitStaticText)
+    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.staticText)
 
-    public init(text: String, imagePlaceholders: [PagoImagePlaceholderModel]? = nil, placeholders: [PagoPlaceholderModel]? = nil, style: PagoLabelStyle = PagoLabelStyle(), hasAction: Bool = false, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitStaticText)) {
+    public init(text: String, imagePlaceholders: [PagoImagePlaceholderModel]? = nil, placeholders: [PagoPlaceholderModel]? = nil, style: PagoLabelStyle = PagoLabelStyle(), hasAction: Bool = false, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.staticText)) {
         
         self.text = text
         self.imagePlaceholders = imagePlaceholders
@@ -86,7 +86,7 @@ public struct PagoLabelStyle: BaseViewStyle {
 public struct PagoPlaceholderModel: Model {
     public var text: String
     public var style = PagoPlaceholderStyle()
-    public var replacement: [String: [NSAttributedStringKey: Any]] {
+    public var replacement: [String: [NSAttributedString.Key: Any]] {
         return [text: style.attributedStyle]
     }
     
@@ -154,7 +154,7 @@ public struct PagoPlaceholderStyle {
     public var fontType: UIFont.Pago?
     public var underlined: Bool = false
     
-    public var attributedStyle: [NSAttributedStringKey: Any] {
+    public var attributedStyle: [NSAttributedString.Key: Any] {
         return NSAttributedString.toAttributes(font: fontType, color: textColorType, underlined: underlined)
     }
     

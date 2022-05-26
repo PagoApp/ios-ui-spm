@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public protocol PagoSearchBarDelegate: class {
+public protocol PagoSearchBarDelegate: AnyObject {
     
     func searchBarDidSearch(_ text: String?)
     func searchBarDidClear()

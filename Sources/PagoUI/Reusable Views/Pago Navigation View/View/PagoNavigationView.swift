@@ -10,7 +10,7 @@
 import UIKit
 //import CommonExtensions
 
-protocol PagoNavigationViewDelegate: class {
+protocol PagoNavigationViewDelegate: AnyObject {
     func didStartSearch(text: String?)
     func didStopSearch()
 }

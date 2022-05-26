@@ -23,7 +23,7 @@ public struct PagoTextFieldModel: Model {
     public var error: String?
     public var validationRules: [ValidationModel]?
     public var style: PagoTextFieldStyle = PagoTextFieldStyle()
-    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitButton)
+    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.button)
     
     private var accessibilityLabel: String? {
         let titleText = placeholder
@@ -34,7 +34,7 @@ public struct PagoTextFieldModel: Model {
     
     public var didUpdateAccessibility: ((PagoAccessibility)->())?
     
-    public init(text: String? = nil, placeholder: String, detail: String? = nil, button: PagoButtonModel? = nil, error: String? = nil, validationRules: [ValidationModel]? = nil, style: PagoTextFieldStyle = PagoTextFieldStyle(), accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitButton)) {
+    public init(text: String? = nil, placeholder: String, detail: String? = nil, button: PagoButtonModel? = nil, error: String? = nil, validationRules: [ValidationModel]? = nil, style: PagoTextFieldStyle = PagoTextFieldStyle(), accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.button)) {
         
         self.text = text
         self.placeholder = placeholder

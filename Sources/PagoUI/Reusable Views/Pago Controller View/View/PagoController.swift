@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol PagoControllerDelegate: class {
+protocol PagoControllerDelegate: AnyObject {
     // NOTE: Add communication between cell and view controller if needed
 }
 

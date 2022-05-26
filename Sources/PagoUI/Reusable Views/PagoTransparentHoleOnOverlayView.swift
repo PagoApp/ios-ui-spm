@@ -34,7 +34,7 @@ class PagoTransparentHoleOnOverlayView: UIView {
             path.addRect(bounds)
 
             layer.path = path
-            layer.fillRule = kCAFillRuleEvenOdd
+            layer.fillRule = CAShapeLayerFillRule.evenOdd
             self.layer.mask = layer
         }
     }

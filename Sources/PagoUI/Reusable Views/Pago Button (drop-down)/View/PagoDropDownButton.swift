@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public protocol PagoDropDownButtonDelegate: class {
+public protocol PagoDropDownButtonDelegate: AnyObject {
     func dropDownDidAppear()
     func dropDownDidSelect(index: Int)
 }

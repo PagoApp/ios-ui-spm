@@ -309,7 +309,7 @@ open class PagoButton: BaseView {
         self.borderView.layer.cornerRadius = CGFloat(self.viewPresenter.cornerRadius)
         
         if let badge = self.badgeView {
-            self.bringSubview(toFront: badge)
+            self.bringSubviewToFront(badge)
         }
     }
     

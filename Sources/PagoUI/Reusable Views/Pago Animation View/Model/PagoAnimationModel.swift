@@ -13,9 +13,9 @@ public struct PagoAnimationModel: Model {
     public let animationType: UIImage.PagoAnimation
     public let loop: Bool
     public let style: PagoAnimationStyle
-    public let accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitNone)
+    public let accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none)
     
-    public init(animationType: UIImage.PagoAnimation, loop: Bool, style: PagoAnimationStyle, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitNone)) {
+    public init(animationType: UIImage.PagoAnimation, loop: Bool, style: PagoAnimationStyle, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none)) {
         
         self.animationType = animationType
         self.loop = loop

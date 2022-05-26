@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PagoLabelWCountdownPresenterDelegate: class {
+public protocol PagoLabelWCountdownPresenterDelegate: AnyObject {
     func countdownEnd()
 }
 

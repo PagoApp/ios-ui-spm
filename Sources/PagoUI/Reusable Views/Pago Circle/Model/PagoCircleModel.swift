@@ -15,7 +15,7 @@ public struct PagoCircleModel: Model {
     public var highlightStyle: PagoUpdateStyle
     public var errorStyle: PagoUpdateStyle
     public var verifiedStyle: PagoUpdateStyle
-    public let accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitNone)
+    public let accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none)
     
     public init(style: PagoCircleStyle, defaultStyle: PagoUpdateStyle, highlightStyle: PagoUpdateStyle, errorStyle: PagoUpdateStyle, verifiedStyle: PagoUpdateStyle) {
         

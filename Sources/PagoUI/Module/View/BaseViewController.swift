@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class BaseViewController: UIViewController, ViewControllerPresenterView, ShowsLoadingView {
+open class BaseViewController: UIViewController, ViewControllerPresenterView {
 
     public var basePresenter: ViewControllerPresenter!
     private var observation: NSKeyValueObservation?
@@ -44,12 +44,12 @@ open class BaseViewController: UIViewController, ViewControllerPresenterView, Sh
     
         guard let scrollViewBottomConstraint = scrollViewBottomConstraint else { return }
         if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             let endFrameY = endFrame?.origin.y ?? 0
-            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             
             var bottomSafeArea: CGFloat!
             if #available(iOS 11.0, *) {
@@ -80,14 +80,15 @@ open class BaseViewController: UIViewController, ViewControllerPresenterView, Sh
     open override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(baseKeyboardWillChangeFrame), name: .UIKeyboardWillChangeFrame, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(baseKeyboardWillChangeFrame), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
 
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillChangeFrame, object: nil)
-        if self.isMovingFromParentViewController {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        if self.isMovingFromParent {
             basePresenter.willPopScreen()
         }
     }
@@ -165,7 +166,7 @@ open class BaseViewController: UIViewController, ViewControllerPresenterView, Sh
             loadingOverlayContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
             loadingOverlayContainer.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
             loadingOverlayContainer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-            self.view.bringSubview(toFront: loadingOverlayContainer)
+            self.view.bringSubviewToFront(loadingOverlayContainer)
             self.loadingOverlayContainer = loadingOverlayContainer
             
             let animLoadingModel = PagoAnimationModel(animationType: .statusLoading, loop: true, style: PagoAnimationStyle(size: CGSize(width: 60, height: 60)))
@@ -268,7 +269,7 @@ open class BaseViewController: UIViewController, ViewControllerPresenterView, Sh
 extension BaseViewController: UIScrollViewDelegate, BaseTableViewScrollDelegate {
     
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
         basePresenter.isScrolling = true
     }

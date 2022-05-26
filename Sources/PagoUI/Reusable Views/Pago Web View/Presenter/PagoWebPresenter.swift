@@ -18,7 +18,7 @@ public protocol PagoWebPresenterView: PresenterView {
     func hideView(isHidden: Bool)
 }
 
-public protocol PagoWebPresenterDelegate: class {
+public protocol PagoWebPresenterDelegate: AnyObject {
     func didReceiveServerRedirectForProvisionalNavigation(url: URL?)
     func didFinish(url: URL?)
     func decidePolicy(forURL: URL?, decisionHandler: @escaping(WKNavigationActionPolicy)->())

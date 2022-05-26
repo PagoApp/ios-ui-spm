@@ -22,7 +22,7 @@ public struct PagoGiphyModel: Model {
         self.isDissmisable = isDissmisable
         self.loop = loop
         self.style = style
-        self.accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitNone)
+        self.accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none)
     }
 }
 

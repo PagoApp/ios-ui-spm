@@ -11,9 +11,9 @@ import UIKit
 
 extension NSAttributedString {
     
-    static func toAttributes(font fontType: UIFont.Pago? = nil, color colorType: UIColor.Pago? = nil, underlined: Bool? = false, striked: Bool = false, strikeColor: UIColor.Pago = UIColor.Pago.blackBodyText, paragraphStyle: PagoParagraphStyle? = nil) -> [NSAttributedStringKey: Any] {
+    static func toAttributes(font fontType: UIFont.Pago? = nil, color colorType: UIColor.Pago? = nil, underlined: Bool? = false, striked: Bool = false, strikeColor: UIColor.Pago = UIColor.Pago.blackBodyText, paragraphStyle: PagoParagraphStyle? = nil) -> [NSAttributedString.Key: Any] {
         
-        var attributes = [NSAttributedStringKey: Any]()
+        var attributes = [NSAttributedString.Key: Any]()
         if let color = colorType?.color {
             attributes[.foregroundColor] = color
         }
@@ -34,7 +34,7 @@ extension NSAttributedString {
             }
         }
         if let underlinedT = underlined, underlinedT == true {
-            attributes[.underlineStyle] = NSUnderlineStyle.styleSingle.rawValue
+            attributes[.underlineStyle] = NSUnderlineStyle.single.rawValue
         }
         
         if striked {

@@ -16,8 +16,8 @@ public protocol BaseStackViewControllerPresenterView: BaseScrollableViewControll
 
 public protocol BaseScrollableViewControllerPresenterView: ViewControllerPresenterView {
     
-    func showLoader()
-    func hideLoader()
+//    func showLoader()
+//    func hideLoader()
 }
 
 public protocol ViewControllerPresenterView: PresenterView {

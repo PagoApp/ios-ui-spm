@@ -97,14 +97,14 @@ extension PagoCircleView: PagoCirclePresenterView {
                 let colorAnimation:CABasicAnimation = CABasicAnimation(keyPath: "backgroundColor")
                 colorAnimation.toValue = style.tintColorType.cgColor
                 colorAnimation.isRemovedOnCompletion = false
-                colorAnimation.fillMode = kCAFillModeForwards
+                colorAnimation.fillMode = CAMediaTimingFillMode.forwards
                 animations.append(colorAnimation)
                 
                 let shakeGroup: CAAnimationGroup = CAAnimationGroup()
                 shakeGroup.animations = animations
                 shakeGroup.duration = CFTimeInterval(style.duration)
                 shakeGroup.isRemovedOnCompletion = false
-                shakeGroup.fillMode = kCAFillModeForwards
+                shakeGroup.fillMode = CAMediaTimingFillMode.forwards
                 self.circle.layer.add(shakeGroup, forKey: animName)
                 
                 self.layoutIfNeeded()

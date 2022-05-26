@@ -16,7 +16,7 @@ public struct PagoAccessibility {
     let accessibilityTraits: UIAccessibilityTraits
     var accessibilityLabel: String?
     
-    static let none: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitNone)
+    static let none: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none)
     
     public init(isAccessibilityElement: Bool, accessibilityTraits: UIAccessibilityTraits, accessibilityLabel: String? = nil) {
         

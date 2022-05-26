@@ -13,7 +13,12 @@ extension String {
     
     func toAttributed(font fontType: UIFont.Pago, color colorType: UIColor.Pago, underlined: Bool = false, striked: Bool = false, strikeColor: UIColor.Pago = UIColor.Pago.blackBodyText, paragraphStyle: PagoParagraphStyle? = nil) -> NSAttributedString {
            
-        var defaultDetailAttributes: [NSAttributedStringKey: Any] = [.foregroundColor: colorType.color, .font: fontType.font, .underlineStyle: underlined ? NSUnderlineStyle.styleSingle.rawValue : NSUnderlineStyle.styleNone.rawValue]
+        var defaultDetailAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: colorType.color, .font: fontType.font]
+        
+        if underlined {
+            defaultDetailAttributes[.underlineStyle] = NSUnderlineStyle.single.rawValue
+        }
+        
         if striked {
             defaultDetailAttributes[.strikethroughStyle] = 2
             defaultDetailAttributes[.strikethroughColor] = strikeColor.color

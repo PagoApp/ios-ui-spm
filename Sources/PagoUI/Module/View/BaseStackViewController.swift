@@ -110,20 +110,20 @@ open class BaseStackViewController: BaseViewController {
 
 extension BaseStackViewController: BaseStackViewControllerPresenterView {
     
-    public func showLoader() {
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.showLoadingView()
-        }
-    }
-    
-    public func hideLoader() {
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.hideLoadingView()
-        }
-    }
-    
+//    public func showLoader() {
+//        
+//        DispatchQueue.main.async { [weak self] in
+////            self?.showLoadingView()
+//        }
+//    }
+//    
+//    public func hideLoader() {
+//        
+//        DispatchQueue.main.async { [weak self] in
+////            self?.hideLoadingView()
+//        }
+//    }
+//    
     open func showEmptyScreen() {
 
         DispatchQueue.main.async { [weak self] in

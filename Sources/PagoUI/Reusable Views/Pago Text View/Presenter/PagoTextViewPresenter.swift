@@ -22,7 +22,7 @@ public protocol PagoTextViewPresenterView: PresenterView {
     func didLayoutView()
 }
 
-public protocol PagoTextViewPresenterDelegate: class {
+public protocol PagoTextViewPresenterDelegate: AnyObject {
     
     func textViewPresenterDidUpdate(presenter: PagoTextViewPresenter, text: String)
 }

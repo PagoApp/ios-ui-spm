@@ -11,9 +11,9 @@ import UIKit
 public struct PagoLoadedImageViewModel: Model {
     public let imageData: DataImageModel
     public let style: PagoImageViewStyle
-    public var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitImage)
+    public var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.image)
     
-    public init(imageData: DataImageModel, style: PagoImageViewStyle, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitImage)) {
+    public init(imageData: DataImageModel, style: PagoImageViewStyle, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.image)) {
         self.imageData = imageData
         self.style = style
         self.accessibility = accessibility

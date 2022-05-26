@@ -41,6 +41,8 @@ open class PagoStackView: UIStackView {
             separator.widthAnchor.constraint(equalToConstant: width).isActive = true
         case .vertical:
             separator.heightAnchor.constraint(equalToConstant: width).isActive = true
+        @unknown default:
+            break
         }
         addArrangedSubview(separator)
     }

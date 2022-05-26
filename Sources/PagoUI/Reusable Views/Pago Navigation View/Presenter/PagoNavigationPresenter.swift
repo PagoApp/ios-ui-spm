@@ -20,7 +20,7 @@ public protocol PagoNavigationPresenterView: PresenterView {
     func setupView(background: UIColor.Pago)
 }
 
-public protocol PagoNavigationPresenterDelegate: class {
+public protocol PagoNavigationPresenterDelegate: AnyObject {
     func didUpdateTitleVisibility(isVisible: Bool)
     func didSetupNavigation()
 }

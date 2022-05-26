@@ -17,9 +17,9 @@ public struct PagoTextViewModel: Model {
     public var counter: PagoLabelModel?
     public var style = PagoTextViewStyle()
     public var counterFormat: String = "%d / %d"
-    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitStaticText)
+    public var accessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.staticText)
     
-    public init(text: String? = nil, textLimit: Int = 30, placeholder: PagoLabelModel? = nil, counter: PagoLabelModel? = nil, style: PagoTextViewStyle = PagoTextViewStyle(), counterFormat: String = "%d / %d", accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraitStaticText)) {
+    public init(text: String? = nil, textLimit: Int = 30, placeholder: PagoLabelModel? = nil, counter: PagoLabelModel? = nil, style: PagoTextViewStyle = PagoTextViewStyle(), counterFormat: String = "%d / %d", accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.staticText)) {
         
         self.text = text
         self.textLimit = textLimit

@@ -132,16 +132,16 @@ public extension UIViewController {
     func addChild(_ child: UIViewController, container: UIView, frame: CGRect? = nil) {
         child.view.frame = frame != nil ? frame! : container.frame
         container.addSubview(child.view)
-        addChildViewController(child)
-        child.didMove(toParentViewController: self)
+        addChild(child)
+        child.didMove(toParent: self)
     }
     
     func removeAsChild() {
         guard parent != nil else {
             return
         }
-        willMove(toParentViewController: nil)
-        removeFromParentViewController()
+        willMove(toParent: nil)
+        removeFromParent()
         view.removeFromSuperview()
     }
 }

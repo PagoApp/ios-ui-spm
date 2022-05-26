@@ -26,7 +26,7 @@ public protocol PagoStackedInfoPresenterView: PresenterView {
     func hideView(isHidden: Bool)
 }
 
-public protocol PagoStackedInfoPresenterDelegate: class {
+public protocol PagoStackedInfoPresenterDelegate: AnyObject {
     func didTap(presenter: PagoStackedInfoPresenter)
 }
 

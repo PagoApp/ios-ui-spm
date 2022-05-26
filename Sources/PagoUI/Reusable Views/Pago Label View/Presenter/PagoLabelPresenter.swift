@@ -7,7 +7,7 @@
 //  Copyright © 2020 cleversoft. All rights reserved.
 //
 
-public protocol PagoLabelPresenterDelegate: class {
+public protocol PagoLabelPresenterDelegate: AnyObject {
     func didTap(label: PagoLabelPresenter)
 }
 

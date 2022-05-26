@@ -12,9 +12,9 @@ import Foundation
 
 public struct PagoSimpleViewModel: Model {
     let style: PagoSimpleViewStyle
-    var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitImage)
+    var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.image)
     
-    public init(style: PagoSimpleViewStyle, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitImage)) {
+    public init(style: PagoSimpleViewStyle, accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.image)) {
         
         self.style = style
         self.accessibility = accessibility

@@ -57,7 +57,7 @@ extension PagoTextView: PagoTextViewPresenterView {
         textView.centerVertically()
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
     
         guard let textTemp = textView.text else { return false }
         let finalString = (textTemp as NSString).replacingCharacters(in: range, with: text)

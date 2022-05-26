@@ -19,7 +19,7 @@ public protocol PagoButtonPresenterView: PresenterView {
     func updateTitle(text: String)
 }
 
-public protocol PagoButtonPresenterDelegate: class {
+public protocol PagoButtonPresenterDelegate: AnyObject {
 
     func didTap(button: PagoButtonPresenter)
 }

@@ -13,7 +13,7 @@ extension UINavigationController {
     
     func removeController(of type: AnyClass) {
         
-        if let controller = self.viewControllers.first(where: {$0.isKind(of: type)}), let index = self.viewControllers.index(of: controller) {
+        if let controller = self.viewControllers.first(where: {$0.isKind(of: type)}), let index = self.viewControllers.firstIndex(of: controller) {
             
             if index < self.viewControllers.count - 1 {
                 self.viewControllers.remove(at: index)
@@ -28,14 +28,14 @@ extension UINavigationController {
     func showLoading() {
         
         DispatchQueue.main.async { [weak self] in
-            self?.topBaseViewController?.showLoadingView()
+            self?.topBaseViewController?.showOverlayLoading()
         }
     }
     
     func hideLoading() {
         
         DispatchQueue.main.async { [weak self] in
-            self?.topBaseViewController?.hideLoadingView()
+            self?.topBaseViewController?.hideOverlayLoading()
         }
     }
     

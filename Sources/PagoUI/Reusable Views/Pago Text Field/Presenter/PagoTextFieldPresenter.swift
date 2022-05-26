@@ -17,7 +17,7 @@ protocol PagoTextFieldPresenterView: PresenterView {
     func dismiss()
 }
 
-protocol PagoTextFieldPresenterDelegate: class {
+protocol PagoTextFieldPresenterDelegate: AnyObject {
     
     func willUpdate(presenter: PagoTextFieldPresenter)
     func didTapDelete(presenter: PagoTextFieldPresenter)

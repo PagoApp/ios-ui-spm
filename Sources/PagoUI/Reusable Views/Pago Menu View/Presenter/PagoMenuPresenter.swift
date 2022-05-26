@@ -14,7 +14,7 @@ public protocol PagoMenuPresenterView: PresenterView {
     func selectButton(index: Int, animated: Bool)
 }
 
-public protocol PagoMenuPresenterDelegate: class {
+public protocol PagoMenuPresenterDelegate: AnyObject {
     func menuDidSelect(index: Int)
 }
 

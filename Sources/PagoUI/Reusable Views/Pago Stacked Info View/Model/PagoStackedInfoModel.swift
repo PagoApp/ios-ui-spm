@@ -14,9 +14,9 @@ public struct PagoStackedInfoModel: Model {
     public var hasAction: Bool = false
     public var index: Int?
     public var style = PagoStackedInfoStyle()
-    public var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitNone)
+    public var accessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none)
     
-    public init(models: [Model], hasAction: Bool = false, index: Int? = nil, style: PagoStackedInfoStyle = PagoStackedInfoStyle(), accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraitNone)) {
+    public init(models: [Model], hasAction: Bool = false, index: Int? = nil, style: PagoStackedInfoStyle = PagoStackedInfoStyle(), accessibility: PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none)) {
         
         self.models = models
         self.hasAction = hasAction

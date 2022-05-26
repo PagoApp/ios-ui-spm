@@ -15,7 +15,7 @@ protocol PagoCheckboxPresenterView: PresenterView {
     func hideView(isHidden: Bool)
 }
 
-protocol PagoCheckboxPresenterDelegate: class {
+protocol PagoCheckboxPresenterDelegate: AnyObject {
     
     func didUpdate(presenter: PagoCheckboxPresenter)
     func didTapInfo(presenter: PagoCheckboxPresenter)

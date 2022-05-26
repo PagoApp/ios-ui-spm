@@ -9,7 +9,7 @@
 
 import UIKit
 
-public protocol PagoTextFieldDelegate: class {
+public protocol PagoTextFieldDelegate: AnyObject {
     
     func shouldLayoutIfNeededParent()
     func didUpdateUI()
