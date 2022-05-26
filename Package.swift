@@ -28,7 +28,9 @@ let package = Package(
                 .product(name: "GiphyUISDK", package: "giphy-ios-sdk")
             ],
             resources: [
-                .process("Resources/loading.json")]),
+                .process("Resources/loading.json"),
+                .process("Resources/TableViewSimpleHeaderView.xib"),
+                .copy("Resources/")]),
         .testTarget(
             name: "PagoUITests",
             dependencies: ["PagoUI"]),
