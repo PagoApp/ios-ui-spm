@@ -1,5 +1,5 @@
 import XCTest
-@testable import PagoUISPM
+@testable import PagoUI
 
 final class PagoUISPMTests: XCTestCase {
     func testExample() throws {
