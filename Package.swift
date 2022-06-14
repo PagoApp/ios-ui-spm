@@ -27,6 +27,7 @@ let package = Package(
         .target(
             name: "PagoUISPM",
             dependencies: [
+                .target(name: "PagoUI"),
                 .product(name: "Lottie", package: "lottie-ios"),
                 .product(name: "GiphyUISDK", package: "giphy-ios-sdk")
             ]),
