@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/alexruperez/lottie-ios.git",
       "state" : {
-        "revision" : "8f81de8d81da8631fd95ff81a9db133b76e13ea4",
-        "version" : "3.1.6"
+        "branch" : "master",
+        "revision" : "934954c378fbd49f3798931cd314740ff3176972"
       }
     }
   ],

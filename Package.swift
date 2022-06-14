@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/alexruperez/lottie-ios.git", exact: "3.1.6"),
+        .package(url: "https://github.com/alexruperez/lottie-ios.git", branch: "master"),
         .package(url: "https://github.com/Giphy/giphy-ios-sdk", exact: "2.1.20")
     ],
     targets: [
