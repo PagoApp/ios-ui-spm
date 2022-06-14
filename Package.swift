@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "PagoUI",
-            targets: ["PagoUI"]),
+            targets: ["PagoUISPM"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,16 +21,15 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
+        .binaryTarget(
             name: "PagoUI",
+            path: "PagoUI.xcframework"),
+        .target(
+            name: "PagoUISPM",
             dependencies: [
                 .product(name: "Lottie", package: "lottie-ios"),
                 .product(name: "GiphyUISDK", package: "giphy-ios-sdk")
-            ],
-            resources: [
-                .process("Resources/loading.json"),
-                .process("Resources/TableViewSimpleHeaderView.xib"),
-                .copy("Resources/")]),
+            ]),
         .testTarget(
             name: "PagoUITests",
             dependencies: ["PagoUI"]),
