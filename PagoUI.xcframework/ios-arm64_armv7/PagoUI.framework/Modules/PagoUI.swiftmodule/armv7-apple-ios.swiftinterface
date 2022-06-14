@@ -1,0 +1,2202 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target armv7-apple-ios10.3 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PagoUI
+import CoreGraphics
+import Foundation
+import GiphyUISDK
+import Lottie
+@_exported import PagoUI
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+public struct PagoBadgePredicate : PagoUI.Predicate {
+  public var text: Swift.String
+  public let textColor: UIKit.UIColor.Pago
+  public let backgroundColor: UIKit.UIColor.Pago
+  public var position: PagoUI.PagoBadgePosition
+  public init(text: Swift.String, textColor: UIKit.UIColor.Pago, backgroundColor: UIKit.UIColor.Pago, position: PagoUI.PagoBadgePosition = .bottomLeft)
+}
+public struct EmptyScreenCellModel : PagoUI.BaseCellModel {
+  public let empty: PagoUI.EmptyScreenModel
+  public var baseStyle: PagoUI.BaseCellStyle
+  public init(empty: PagoUI.EmptyScreenModel, baseStyle: PagoUI.BaseCellStyle = EmptyScreenCellStyle())
+}
+public struct EmptyScreenCellStyle : PagoUI.BaseCellStyle {
+  public var backgroundColorType: UIKit.UIColor.Pago
+  public init(backgroundColorType: UIKit.UIColor.Pago = .lightGrayInactive)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class PagoTextView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoTextViewPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoTextViewPresenter)
+  @objc deinit
+}
+extension PagoUI.PagoTextView : PagoUI.PagoTextViewPresenterView {
+  @_Concurrency.MainActor(unsafe) public func didLayoutView()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func setup(style: PagoUI.PagoTextViewStyle)
+  @_Concurrency.MainActor(unsafe) public func setup(width: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func setup(height: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func setupUI(hasCounter: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func setup(counter: PagoUI.PagoLabelPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(placeholder: PagoUI.PagoLabelPresenter)
+  @_Concurrency.MainActor(unsafe) public func focusTextView()
+  @_Concurrency.MainActor(unsafe) public func hidePlaceholder()
+  @_Concurrency.MainActor(unsafe) public func showPlaceholder()
+}
+extension PagoUI.PagoTextView : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+}
+extension UIKit.UITextView {
+  @_Concurrency.MainActor(unsafe) public func centerVertically()
+}
+public protocol EmptyScreenCellPresenterView : PagoUI.PresenterView {
+  func setup(empty: PagoUI.EmptyScreenPresenter)
+}
+@_inheritsConvenienceInitializers open class EmptyScreenCellPresenter : PagoUI.BaseCellPresenter {
+  override public var identifier: Swift.String {
+    get
+  }
+  public var model: PagoUI.EmptyScreenCellModel {
+    get
+    set
+  }
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoStackedInfoView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoStackedInfoPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoStackedInfoPresenter)
+  @_Concurrency.MainActor(unsafe) public func setupUI()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+}
+extension PagoUI.PagoStackedInfoView : PagoUI.PagoStackedInfoPresenterView {
+  @_Concurrency.MainActor(unsafe) public func hideView(isHidden: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func reloadStyle(isTouching: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func addLine(presenter: PagoUI.PagoLinePresenter)
+  @_Concurrency.MainActor(unsafe) public func addButton(presenter: PagoUI.PagoButtonPresenter)
+  @_Concurrency.MainActor(unsafe) public func addSpace(presenter: PagoUI.PagoSpacePresenter)
+  @_Concurrency.MainActor(unsafe) public func addLabel(presenter: PagoUI.PagoLabelPresenter)
+  @_Concurrency.MainActor(unsafe) public func addView(presenter: PagoUI.PagoSimpleViewPresenter)
+  @_Concurrency.MainActor(unsafe) public func addField(presenter: PagoUI.PagoTextFieldPresenter)
+  @_Concurrency.MainActor(unsafe) public func addLoadedImageView(presenter: PagoUI.PagoLoadedImageViewPresenter)
+  @_Concurrency.MainActor(unsafe) public func addAnimation(presenter: PagoUI.PagoAnimationPresenter)
+  @_Concurrency.MainActor(unsafe) public func addCircle(presenter: PagoUI.PagoCirclePresenter)
+  @_Concurrency.MainActor(unsafe) public func addStackInfo(presenter: PagoUI.PagoStackedInfoPresenter)
+  @_Concurrency.MainActor(unsafe) public func addCountdownLabel(presenter: PagoUI.PagoLabelWCountdownPresenter)
+  @_Concurrency.MainActor(unsafe) public func removeAllChildren()
+}
+public protocol PagoWebPresenterView : PagoUI.PresenterView {
+  func load(request: Foundation.URLRequest)
+  func setup(loader: PagoUI.PagoAnimationPresenter)
+  func hideLoader()
+  func showLoader()
+  func hideView(isHidden: Swift.Bool)
+}
+public protocol PagoWebPresenterDelegate : AnyObject {
+  func didReceiveServerRedirectForProvisionalNavigation(url: Foundation.URL?)
+  func didFinish(url: Foundation.URL?)
+  func decidePolicy(forURL: Foundation.URL?, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> ())
+  func didReceiveJSCallBack(state: Swift.String)
+}
+extension PagoUI.PagoWebPresenterDelegate {
+  public func didReceiveServerRedirectForProvisionalNavigation(url: Foundation.URL?)
+  public func didFinish(url: Foundation.URL?)
+  public func decidePolicy(forURL: Foundation.URL?, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> ())
+}
+@_inheritsConvenienceInitializers open class PagoWebPresenter : PagoUI.BasePresenter {
+  weak public var delegate: PagoUI.PagoWebPresenterDelegate?
+  public var model: PagoUI.PagoWebModel {
+    get
+    set
+  }
+  public var isLoading: Swift.Bool {
+    get
+  }
+  public func loadData()
+  public var isHidden: Swift.Bool {
+    get
+    set
+  }
+  public func showLoader()
+  public func hideLoader()
+  public func restartWebView()
+  public func didReceiveServerRedirectForProvisionalNavigation(url: Foundation.URL?)
+  public func didFinish(url: Foundation.URL?)
+  public func decidePolicy(forURL: Foundation.URL?, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> ())
+  public func javascriptCallBack(state: Swift.String)
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public struct PagoTextViewModel : PagoUI.Model {
+  public var text: Swift.String?
+  public var textLimit: Swift.Int
+  public var placeholder: PagoUI.PagoLabelModel?
+  public var counter: PagoUI.PagoLabelModel?
+  public var style: PagoUI.PagoTextViewStyle
+  public var counterFormat: Swift.String
+  public var accessibility: PagoUI.PagoAccessibility
+  public init(text: Swift.String? = nil, textLimit: Swift.Int = 30, placeholder: PagoUI.PagoLabelModel? = nil, counter: PagoUI.PagoLabelModel? = nil, style: PagoUI.PagoTextViewStyle = PagoTextViewStyle(), counterFormat: Swift.String = "%d / %d", accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.staticText))
+}
+public class PagoTextViewStyle : PagoUI.BaseViewStyle {
+  public var textColorType: UIKit.UIColor.Pago
+  public var fontType: UIKit.UIFont.Pago
+  public var backgroundColorType: UIKit.UIColor.Pago
+  public var tintColorType: UIKit.UIColor.Pago?
+  public var alignment: UIKit.NSTextAlignment
+  public var lineBreakMode: UIKit.NSLineBreakMode
+  public var numberOfLines: Swift.Int?
+  public var borderStyle: PagoUI.BorderStyle?
+  public var cornderRadius: Swift.Int?
+  public var inset: UIKit.UIEdgeInsets
+  public var width: CoreGraphics.CGFloat?
+  public var height: CoreGraphics.CGFloat?
+  public var showsCounter: Swift.Bool
+  final public let counterStyle: PagoUI.PagoLabelStyle
+  public init(textColorType: UIKit.UIColor.Pago = .blackBodyText, fontType: UIKit.UIFont.Pago = .regular15, backgroundColorType: UIKit.UIColor.Pago = .white, tintColorType: UIKit.UIColor.Pago? = nil, alignment: UIKit.NSTextAlignment = .left, lineBreakMode: UIKit.NSLineBreakMode = .byWordWrapping, numberOfLines: Swift.Int? = nil, borderStyle: PagoUI.BorderStyle? = nil, cornderRadius: Swift.Int? = nil, inset: UIKit.UIEdgeInsets = UIEdgeInsets.zero, width: CoreGraphics.CGFloat? = nil, height: CoreGraphics.CGFloat? = nil, showsCounter: Swift.Bool = false)
+  @objc deinit
+}
+public protocol PagoBadgePresenterView : PagoUI.PresenterView {
+  func setup(badge: PagoUI.PagoLabelPresenter, background: UIKit.UIColor.Pago)
+  func show()
+  func hide()
+}
+open class PagoBadgePresenter : PagoUI.BasePresenter {
+  public var position: PagoUI.PagoBadgePosition {
+    get
+  }
+  public var model: PagoUI.PagoBadgeModel {
+    get
+  }
+  public init(predicate: PagoUI.PagoBadgePredicate)
+  public func update(predicate: PagoUI.PagoBadgePredicate)
+  public func update(text: Swift.String)
+  public func hide()
+  public func show()
+  @objc deinit
+}
+public protocol PagoLabelPresenterDelegate : AnyObject {
+  func didTap(label: PagoUI.PagoLabelPresenter)
+}
+public protocol PagoLabelPresenterView : PagoUI.PresenterView {
+  func hideView(isHidden: Swift.Bool)
+}
+@_inheritsConvenienceInitializers open class PagoLabelPresenter : PagoUI.BasePresenter {
+  public var isHidden: Swift.Bool {
+    get
+    set
+  }
+  override public func update(model: PagoUI.Model)
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public struct EmptyScreenModel : PagoUI.Model {
+  public var title: Swift.String
+  public var detail: Swift.String
+  public var placeholder: Swift.String
+  public var imageType: UIKit.UIImage.Pago
+  public var style: PagoUI.EmptyScreenStyle
+  public init(title: Swift.String, detail: Swift.String, placeholder: Swift.String, imageType: UIKit.UIImage.Pago, style: PagoUI.EmptyScreenStyle = EmptyScreenStyle())
+}
+public struct EmptyScreenStyle {
+  public let titleFontType: UIKit.UIFont.Pago
+  public let titleColorType: UIKit.UIColor.Pago
+  public let detailFontType: UIKit.UIFont.Pago
+  public let placeholderColorType: UIKit.UIColor.Pago
+  public let detailColorType: UIKit.UIColor.Pago
+  public let backgroundColorType: UIKit.UIColor.Pago
+  public var contentInsets: UIKit.UIEdgeInsets
+  public var space: CoreGraphics.CGFloat?
+  public init(contentInsets: UIKit.UIEdgeInsets = .zero, space: CoreGraphics.CGFloat? = nil)
+}
+public struct PagoAnimationModel : PagoUI.Model {
+  public let animationType: UIKit.UIImage.PagoAnimation
+  public let loop: Swift.Bool
+  public let style: PagoUI.PagoAnimationStyle
+  public let accessibility: PagoUI.PagoAccessibility
+  public init(animationType: UIKit.UIImage.PagoAnimation, loop: Swift.Bool, style: PagoUI.PagoAnimationStyle, accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none))
+}
+public struct PagoAnimationStyle : PagoUI.BaseStyle {
+  public let size: CoreGraphics.CGSize
+  public let backgroundColorType: UIKit.UIColor.Pago
+  public init(size: CoreGraphics.CGSize, backgroundColorType: UIKit.UIColor.Pago = .clear)
+}
+public struct PagoButtonStyle {
+  public var font: UIKit.UIFont.Pago
+  public var textColor: UIKit.UIColor.Pago
+  public var backgroundColor: UIKit.UIColor.Pago
+  public var cornerRadius: Swift.Int
+  public var isUnderlined: Swift.Bool
+  public var placeholderStyle: PagoUI.HighlightedStyle?
+  public var shadowStyle: PagoUI.ShadowStyle?
+  public var borderStyle: PagoUI.BorderStyle?
+  public var numberOfLines: Swift.Int
+  public init(font: UIKit.UIFont.Pago = .semiBold17, textColor: UIKit.UIColor.Pago = .white, backgroundColor: UIKit.UIColor.Pago, cornerRadius: Swift.Int = 0, isUnderlined: Swift.Bool = false, placeholderStyle: PagoUI.HighlightedStyle? = nil, shadowStyle: PagoUI.ShadowStyle? = nil, borderStyle: PagoUI.BorderStyle? = nil, numberOfLines: Swift.Int = 1)
+}
+public struct HighlightedStyle {
+  public var colorType: UIKit.UIColor.Pago
+  public var fontType: UIKit.UIFont.Pago
+  public var isUnderlined: Swift.Bool
+  public init(colorType: UIKit.UIColor.Pago, fontType: UIKit.UIFont.Pago, isUnderlined: Swift.Bool = false)
+}
+public struct BorderStyle {
+  public var colorType: UIKit.UIColor.Pago
+  public var width: CoreGraphics.CGFloat
+  public init(colorType: UIKit.UIColor.Pago = .dividers, width: CoreGraphics.CGFloat = 2)
+}
+public struct ShadowStyle {
+  public var opacity: Swift.Float
+  public var radius: CoreGraphics.CGFloat
+  public var offset: CoreGraphics.CGSize
+  public var colorType: UIKit.UIColor.Pago
+  public init(opacity: Swift.Float = 0.2, radius: CoreGraphics.CGFloat = 3, offset: CoreGraphics.CGSize = CGSize(width: 0.0, height: 3.0), colorType: UIKit.UIColor.Pago = .blackBodyText)
+}
+@objc @_Concurrency.MainActor(unsafe) open class PagoAnimationView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoAnimationPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoAnimationPresenter)
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @objc deinit
+}
+extension PagoUI.PagoAnimationView : PagoUI.PagoAnimationPresenterView {
+  @_Concurrency.MainActor(unsafe) public func play()
+  @_Concurrency.MainActor(unsafe) public func stop()
+}
+@_inheritsConvenienceInitializers open class PagoImageViewPresenter : PagoUI.BasePresenter {
+  public var model: PagoUI.PagoImageViewModel {
+    get
+    set
+  }
+  public var imageType: UIKit.UIImage.Pago {
+    get
+  }
+  public var style: PagoUI.PagoImageViewStyle {
+    get
+  }
+  public var accessibility: PagoUI.PagoAccessibility {
+    get
+  }
+  override public func update(model: PagoUI.Model)
+  public func update(style: PagoUI.PagoImageViewStyle)
+  public func update(image: UIKit.UIImage.Pago?)
+  public func reload()
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public struct ValidationModel : PagoUI.Model {
+  public var validation: (Swift.String?) -> Swift.Bool
+  public var error: Swift.String
+  public init(validation: @escaping (Swift.String?) -> Swift.Bool, error: Swift.String)
+}
+public protocol BaseTableViewScrollDelegate : AnyObject {
+  func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
+  func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseTableViewController : PagoUI.BaseViewController {
+  @_Concurrency.MainActor(unsafe) public var tableView: UIKit.UITableView!
+  @_Concurrency.MainActor(unsafe) final public let refreshControl: UIKit.UIRefreshControl
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func reloadData()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension PagoUI.BaseTableViewController : PagoUI.BaseScrollableViewControllerPresenterView {
+  @_Concurrency.MainActor(unsafe) public func showLoader()
+  @_Concurrency.MainActor(unsafe) public func hideLoader()
+}
+extension PagoUI.BaseTableViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+}
+public protocol Presenter {
+  func setView(mView: PagoUI.PresenterView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoLabelWCountdown : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoLabelWCountdownPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoLabelWCountdownPresenter)
+  @objc deinit
+}
+extension PagoUI.PagoLabelWCountdown : PagoUI.PagoLabelWCountdownPresenterView {
+  @_Concurrency.MainActor(unsafe) public func setupLabel(presenter: PagoUI.PagoLabelPresenter)
+}
+public struct PagoButtonModel : PagoUI.Model {
+  public var title: Swift.String?
+  public var highlightedText: Swift.String?
+  public var imageView: PagoUI.PagoImageViewModel?
+  public var isEnabled: Swift.Bool
+  public var isSelfSized: Swift.Bool
+  public var index: Swift.Int
+  public var style: PagoUI.PagoButtonStyle
+  public var highlightedStyle: PagoUI.PagoButtonStyle?
+  public var inactiveStyle: PagoUI.PagoButtonStyle?
+  public var badge: PagoUI.PagoBadgePredicate?
+  public var width: CoreGraphics.CGFloat?
+  public var height: CoreGraphics.CGFloat?
+  public var accessibility: PagoUI.PagoAccessibility
+  public init(title: Swift.String? = nil, highlightedText: Swift.String? = nil, imageView: PagoUI.PagoImageViewModel? = nil, isEnabled: Swift.Bool = true, isSelfSized: Swift.Bool = false, index: Swift.Int = 0, style: PagoUI.PagoButtonStyle, highlightedStyle: PagoUI.PagoButtonStyle? = nil, inactiveStyle: PagoUI.PagoButtonStyle? = nil, badge: PagoUI.PagoBadgePredicate? = nil, width: CoreGraphics.CGFloat? = nil, height: CoreGraphics.CGFloat? = nil, accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.button))
+}
+extension PagoUI.PagoButtonModel {
+  public enum Pago {
+    case main, secondary, underlined
+    public static func == (a: PagoUI.PagoButtonModel.Pago, b: PagoUI.PagoButtonModel.Pago) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(title: Swift.String? = nil, highlightedText: Swift.String? = nil, imageView: PagoUI.PagoImageViewModel? = nil, isEnabled: Swift.Bool = true, isSelfSized: Swift.Bool = false, highlightedStyle: PagoUI.PagoButtonStyle? = nil, type: PagoUI.PagoButtonModel.Pago, badge: PagoUI.PagoBadgePredicate? = nil, height: CoreGraphics.CGFloat? = nil)
+}
+@objc @_Concurrency.MainActor(unsafe) open class PagoMenuView : PagoUI.BaseView {
+  @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) convenience public init(presenter: PagoUI.PagoMenuPresenter)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoMenuPresenter)
+  @_Concurrency.MainActor(unsafe) public func goToLogin()
+  @_Concurrency.MainActor(unsafe) public func goToRegister()
+  @objc deinit
+}
+extension PagoUI.PagoMenuView : PagoUI.PagoMenuPresenterView {
+  @_Concurrency.MainActor(unsafe) public func selectButton(index: Swift.Int, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func setup(buttons: [PagoUI.PagoButtonPresenter])
+}
+public struct PagoLoadedImageViewModel : PagoUI.Model {
+  public let imageData: PagoUI.DataImageModel
+  public let style: PagoUI.PagoImageViewStyle
+  public var accessibility: PagoUI.PagoAccessibility
+  public init(imageData: PagoUI.DataImageModel, style: PagoUI.PagoImageViewStyle, accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.image))
+}
+public struct BackendImage : PagoUI.DataImageModel {
+  public let url: Swift.String
+  public let placeholderImageName: Swift.String
+  public init(url: Swift.String, placeholderImageName: Swift.String)
+}
+public struct DataImage : PagoUI.DataImageModel {
+  public let data: Foundation.Data
+  public init(data: Foundation.Data)
+}
+public struct PagoImage : PagoUI.DataImageModel {
+  public let image: UIKit.UIImage.Pago
+  public init(image: UIKit.UIImage.Pago)
+}
+public struct PlaceholderLabelImage : PagoUI.DataImageModel {
+  public let label: PagoUI.PagoLabelModel
+  public init(label: PagoUI.PagoLabelModel)
+}
+public protocol DataImageModel : PagoUI.Model {
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class TableViewSimpleHeaderView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) public var presenter: PagoUI.BasePresenter! {
+    @_Concurrency.MainActor(unsafe) get
+    @_Concurrency.MainActor(unsafe) set
+  }
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct PagoStackedInfoModel : PagoUI.Model {
+  public let models: [PagoUI.Model]
+  public var hasAction: Swift.Bool
+  public var index: Swift.Int?
+  public var style: PagoUI.PagoStackedInfoStyle
+  public var accessibility: PagoUI.PagoAccessibility
+  public init(models: [PagoUI.Model], hasAction: Swift.Bool = false, index: Swift.Int? = nil, style: PagoUI.PagoStackedInfoStyle = PagoStackedInfoStyle(), accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.none))
+}
+public struct PagoStackedInfoStyle : PagoUI.BaseStyle {
+  public var backgroundColor: UIKit.UIColor.Pago
+  public var stackBackgroundColor: UIKit.UIColor.Pago
+  public var marginBackgroundColor: UIKit.UIColor.Pago
+  public var distribution: UIKit.UIStackView.Distribution
+  public var alignment: UIKit.UIStackView.Alignment
+  public var axis: UIKit.NSLayoutConstraint.Axis
+  public var spacing: CoreGraphics.CGFloat
+  public var borderStyle: PagoUI.BorderStyle?
+  public var cornerRadius: Swift.Int?
+  public var inset: UIKit.UIEdgeInsets
+  public var marginInset: UIKit.UIEdgeInsets
+  public init(backgroundColor: UIKit.UIColor.Pago = .clear, stackBackgroundColor: UIKit.UIColor.Pago = .clear, marginBackgroundColor: UIKit.UIColor.Pago = .clear, distribution: UIKit.UIStackView.Distribution = .fillProportionally, alignment: UIKit.UIStackView.Alignment = .fill, axis: UIKit.NSLayoutConstraint.Axis = .horizontal, spacing: CoreGraphics.CGFloat = CGFloat(8), borderStyle: PagoUI.BorderStyle? = nil, cornerRadius: Swift.Int? = nil, inset: UIKit.UIEdgeInsets = UIEdgeInsets.zero, marginInset: UIKit.UIEdgeInsets = UIEdgeInsets.zero)
+}
+open class BasePresenter : PagoUI.Presenter, Swift.Equatable {
+  public static func == (lhs: PagoUI.BasePresenter, rhs: PagoUI.BasePresenter) -> Swift.Bool
+  public var baseModel: PagoUI.Model!
+  weak public var basePresenterView: PagoUI.PresenterView?
+  public init(model: PagoUI.Model = EmptyModel())
+  public func update(model: PagoUI.Model)
+  public func setView(mView: PagoUI.PresenterView)
+  public func isInBounds<T>(source: [T], index: Swift.Int) -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoBadge : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoBadgePresenter)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoBadgePresenter)
+  @objc deinit
+}
+extension PagoUI.PagoBadge : PagoUI.PagoBadgePresenterView {
+  @_Concurrency.MainActor(unsafe) public func setup(badge: PagoUI.PagoLabelPresenter, background: UIKit.UIColor.Pago)
+  @_Concurrency.MainActor(unsafe) public func show()
+  @_Concurrency.MainActor(unsafe) public func hide()
+}
+public struct PagoLabelModel : PagoUI.Model {
+  public var text: Swift.String
+  public var imagePlaceholders: [PagoUI.PagoImagePlaceholderModel]?
+  public var placeholders: [PagoUI.PagoPlaceholderModel]?
+  public var style: PagoUI.PagoLabelStyle
+  public var hasAction: Swift.Bool
+  public var accessibility: PagoUI.PagoAccessibility
+  public init(text: Swift.String, imagePlaceholders: [PagoUI.PagoImagePlaceholderModel]? = nil, placeholders: [PagoUI.PagoPlaceholderModel]? = nil, style: PagoUI.PagoLabelStyle = PagoLabelStyle(), hasAction: Swift.Bool = false, accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.staticText))
+}
+public struct ContentPriorityBase {
+  public let priority: UIKit.UILayoutPriority
+  public let axis: UIKit.NSLayoutConstraint.Axis
+  public init(priority: UIKit.UILayoutPriority, axis: UIKit.NSLayoutConstraint.Axis)
+}
+public struct PagoSize {
+  public var width: CoreGraphics.CGFloat?
+  public var height: CoreGraphics.CGFloat?
+}
+public struct PagoLabelStyle : PagoUI.BaseViewStyle {
+  public var textColorType: UIKit.UIColor.Pago
+  public var fontType: UIKit.UIFont.Pago
+  public var paragraphStyle: PagoUI.PagoParagraphStyle?
+  public var size: PagoUI.PagoSize?
+  public var backgroundColorType: UIKit.UIColor.Pago
+  public var tintColorType: UIKit.UIColor.Pago?
+  public var alignment: UIKit.NSTextAlignment
+  public var lineBreakMode: UIKit.NSLineBreakMode
+  public var numberOfLines: Swift.Int
+  public var contentCompressionResistance: PagoUI.ContentPriorityBase?
+  public var contentHuggingPriority: PagoUI.ContentPriorityBase?
+  public var borderStyle: PagoUI.BorderStyle?
+  public var cornderRadius: Swift.Int?
+  public var isStriked: Swift.Bool
+  public var inset: UIKit.UIEdgeInsets
+  public init(textColorType: UIKit.UIColor.Pago = .blackBodyText, fontType: UIKit.UIFont.Pago = .regular15, paragraphStyle: PagoUI.PagoParagraphStyle? = nil, size: PagoUI.PagoSize? = nil, backgroundColorType: UIKit.UIColor.Pago = .clear, tintColorType: UIKit.UIColor.Pago? = nil, alignment: UIKit.NSTextAlignment = .left, lineBreakMode: UIKit.NSLineBreakMode = .byWordWrapping, numberOfLines: Swift.Int = 1, contentCompressionResistance: PagoUI.ContentPriorityBase? = nil, contentHuggingPriority: PagoUI.ContentPriorityBase? = nil, borderStyle: PagoUI.BorderStyle? = nil, cornderRadius: Swift.Int? = nil, isStriked: Swift.Bool = false, inset: UIKit.UIEdgeInsets = UIEdgeInsets.zero)
+}
+public struct PagoPlaceholderModel : PagoUI.Model {
+  public var text: Swift.String
+  public var style: PagoUI.PagoPlaceholderStyle
+  public var replacement: [Swift.String : [Foundation.NSAttributedString.Key : Any]] {
+    get
+  }
+  public init(text: Swift.String, style: PagoUI.PagoPlaceholderStyle = PagoPlaceholderStyle())
+}
+public struct PagoParagraphStyle {
+  public let zeroLineSpace: Swift.Bool
+  public let alignment: UIKit.NSTextAlignment
+  public let lineBreakMode: UIKit.NSLineBreakMode
+  public init(zeroLineSpace: Swift.Bool, alignment: UIKit.NSTextAlignment, lineBreakMode: UIKit.NSLineBreakMode)
+}
+public struct PagoImagePlaceholderModel : PagoUI.Model {
+  public var key: Swift.String
+  public var image: UIKit.UIImage.Pago
+  public var xOffset: CoreGraphics.CGFloat?
+  public var yOffset: CoreGraphics.CGFloat
+  public var width: CoreGraphics.CGFloat?
+  public var height: CoreGraphics.CGFloat
+  public init(key: Swift.String, image: UIKit.UIImage.Pago, xOffset: CoreGraphics.CGFloat? = nil, yOffset: CoreGraphics.CGFloat = -4, width: CoreGraphics.CGFloat? = nil, height: CoreGraphics.CGFloat = 20)
+}
+public struct PagoPlaceholderStyle {
+  public var textColorType: UIKit.UIColor.Pago?
+  public var fontType: UIKit.UIFont.Pago?
+  public var underlined: Swift.Bool
+  public var attributedStyle: [Foundation.NSAttributedString.Key : Any] {
+    get
+  }
+  public init(textColorType: UIKit.UIColor.Pago? = nil, fontType: UIKit.UIFont.Pago? = nil, underlined: Swift.Bool = false)
+}
+public enum PagoImagePlaceholderType {
+  case logo, logoWhite
+  case moneyBag
+  case coin
+  case visaCard, visaCardWhite
+  case visaLogoBlue
+  case masterCard
+  case freemiumPremiumIcon
+  public func getModel(xOffset: CoreGraphics.CGFloat? = nil, yOffset: CoreGraphics.CGFloat = -4, width: CoreGraphics.CGFloat? = nil, height: CoreGraphics.CGFloat = 20, keyUppercased: Swift.Bool = false) -> PagoUI.PagoImagePlaceholderModel
+  public static func == (a: PagoUI.PagoImagePlaceholderType, b: PagoUI.PagoImagePlaceholderType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers open class PagoLinePresenter : PagoUI.BasePresenter {
+  public var model: PagoUI.PagoLineModel {
+    get
+    set
+  }
+  public var style: PagoUI.PagoLineStyle {
+    get
+  }
+  public var view: PagoUI.PresenterView? {
+    get
+  }
+  public func update(color: UIKit.UIColor.Pago)
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) open class PagoLoadedImageView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoLoadedImageViewPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoLoadedImageViewPresenter)
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @objc deinit
+}
+extension PagoUI.PagoLoadedImageView : PagoUI.PagoLoadedImageViewPresenterView {
+  @_Concurrency.MainActor(unsafe) public func setup(labelPlaceholder: PagoUI.PagoLabelPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(image: UIKit.UIImage.Pago)
+  @_Concurrency.MainActor(unsafe) public func setup(data: Foundation.Data)
+  @_Concurrency.MainActor(unsafe) public func resizeImage(width: CoreGraphics.CGFloat, height: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func setup(backend: PagoUI.BackendImage)
+}
+public struct PagoCheckboxModel : PagoUI.Model {
+  public var title: Swift.String?
+  public var highlightedText: Swift.String?
+  public var isSelected: Swift.Bool
+  public let selectedStyle: PagoUI.PagoCheckboxStyle
+  public var deselectedStyle: PagoUI.PagoCheckboxStyle
+  public var errorStyle: PagoUI.PagoCheckboxStyle?
+  public var hasInfo: Swift.Bool
+  public let transitionTime: Swift.Double
+  public var accessibility: PagoUI.PagoAccessibility
+  public init(title: Swift.String? = nil, highlightedText: Swift.String? = nil, isSelected: Swift.Bool = false, selectedStyle: PagoUI.PagoCheckboxStyle, deselectedStyle: PagoUI.PagoCheckboxStyle, errorStyle: PagoUI.PagoCheckboxStyle? = nil, hasInfo: Swift.Bool = false, transitionTime: Swift.Double = 0.15, accessibility: PagoUI.PagoAccessibility)
+}
+public protocol PagoLabelWCountdownPresenterDelegate : AnyObject {
+  func countdownEnd()
+}
+public protocol PagoLabelWCountdownPresenterView : PagoUI.PresenterView {
+  func setupLabel(presenter: PagoUI.PagoLabelPresenter)
+}
+open class PagoLabelWCountdownPresenter : PagoUI.BasePresenter {
+  weak public var delegate: PagoUI.PagoLabelWCountdownPresenterDelegate?
+  public init(model: PagoUI.PagoLabelWCountdownModel)
+  public func startCountdown()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class TableViewSimpleHeaderPresenter : PagoUI.BasePresenter {
+  public var title: Swift.String {
+    get
+  }
+  public var style: PagoUI.TableViewSimpleHeaderStyle {
+    get
+  }
+  override public func update(model: PagoUI.Model)
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers open class EmptyScreenPresenter : PagoUI.BasePresenter {
+  public var title: Swift.String {
+    get
+  }
+  public var detail: Swift.String {
+    get
+  }
+  public var placeholder: Swift.String {
+    get
+  }
+  public var imageType: UIKit.UIImage.Pago {
+    get
+  }
+  public var style: PagoUI.EmptyScreenStyle {
+    get
+  }
+  public func update(placeholder: Swift.String)
+  override public func update(model: PagoUI.Model)
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseStackViewController : PagoUI.BaseViewController {
+  @_Concurrency.MainActor(unsafe) public var scrollView: PagoUI.PagoScrollView!
+  @_Concurrency.MainActor(unsafe) public var stackView: PagoUI.PagoStackView!
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension PagoUI.BaseStackViewController : PagoUI.BaseStackViewControllerPresenterView {
+  @_Concurrency.MainActor(unsafe) open func showEmptyScreen()
+  @_Concurrency.MainActor(unsafe) open func hideEmptyScreen()
+}
+extension UIKit.UIFont {
+  public enum Pago {
+    case bold36, bold28, bold24, bold20, bold17, bold15, bold13, bold9
+    case semiBold17, semiBold15, semiBold13, semiBold11
+    case medium17, medium15, medium13, medium32, medium20
+    case regular17, regular15, regular13, regular11
+    case icon32, icon24, icon17, icon15, icon13, icon11
+    case enchantedRegular53, enchantedRegular100
+    public var font: UIKit.UIFont {
+      get
+    }
+    public static func == (a: UIKit.UIFont.Pago, b: UIKit.UIFont.Pago) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc @_Concurrency.MainActor(unsafe) open class PagoSimpleView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoSimpleViewPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoSimpleViewPresenter)
+  @objc deinit
+}
+extension PagoUI.PagoSimpleView : PagoUI.PagoSimpleViewPresenterView {
+  @_Concurrency.MainActor(unsafe) public func setupView(style: PagoUI.PagoSimpleViewStyle)
+}
+public protocol PagoMenuPresenterView : PagoUI.PresenterView {
+  func setup(buttons: [PagoUI.PagoButtonPresenter])
+  func selectButton(index: Swift.Int, animated: Swift.Bool)
+}
+public protocol PagoMenuPresenterDelegate : AnyObject {
+  func menuDidSelect(index: Swift.Int)
+}
+@_inheritsConvenienceInitializers open class PagoMenuPresenter : PagoUI.BasePresenter {
+  weak public var delegate: PagoUI.PagoMenuPresenterDelegate?
+  public var model: PagoUI.PagoMenuModel {
+    get
+  }
+  public var inactiveColorType: UIKit.UIColor.Pago {
+    get
+  }
+  public var activeColorType: UIKit.UIColor.Pago {
+    get
+  }
+  public var buttonsCount: Swift.Int {
+    get
+  }
+  public var buttonWidthPercentage: Swift.Double {
+    get
+  }
+  public var selectedIndex: Swift.Int
+  public func loadData()
+  public func select(index: Swift.Int)
+  public func button(at index: Swift.Int) -> PagoUI.PagoButtonPresenter?
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+extension PagoUI.PagoMenuPresenter : PagoUI.PagoButtonPresenterDelegate {
+  public func didTap(button: PagoUI.PagoButtonPresenter)
+}
+@_hasMissingDesignatedInitializers open class PagoRepeater {
+  @objc deinit
+}
+extension UIKit.UINavigationBar {
+  @_Concurrency.MainActor(unsafe) public func makeItFlatWhite()
+  @_Concurrency.MainActor(unsafe) public func update(bgColor: UIKit.UIColor, tintColor color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func makeItTransparent()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseViewController : UIKit.UIViewController, PagoUI.ViewControllerPresenterView {
+  @_Concurrency.MainActor(unsafe) public var basePresenter: PagoUI.ViewControllerPresenter!
+  @_Concurrency.MainActor(unsafe) convenience public init(presenter: PagoUI.ViewControllerPresenter)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func showOverlayLoading()
+  @_Concurrency.MainActor(unsafe) public func hideOverlayLoading()
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func didStartedLoading()
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func didFinishLoading()
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func reloadView()
+  @_Concurrency.MainActor(unsafe) public func shouldShowTitle(_ showTitle: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func setupNavigation(presenter: PagoUI.PagoNavigationPresenter)
+  @_Concurrency.MainActor(unsafe) public func snapNavigation(offset: Swift.Float?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension PagoUI.BaseViewController : UIKit.UIScrollViewDelegate, PagoUI.BaseTableViewScrollDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewWillBeginDecelerating(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidEndDragging(_ scrollView: UIKit.UIScrollView, willDecelerate decelerate: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+}
+extension PagoUI.BaseViewController : UIKit.UINavigationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationController(_ navigationController: UIKit.UINavigationController, willShow viewController: UIKit.UIViewController, animated: Swift.Bool)
+}
+@_inheritsConvenienceInitializers open class BaseCellPresenter : PagoUI.BasePresenter {
+  open var identifier: Swift.String! {
+    get
+  }
+  public var cellModel: PagoUI.BaseCellModel! {
+    get
+  }
+  public var baseStyle: PagoUI.BaseCellStyle {
+    get
+  }
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public struct EmptyCellModel : PagoUI.BaseCellModel {
+  public var baseStyle: PagoUI.BaseCellStyle
+}
+public struct EmptyCellStyle : PagoUI.BaseCellStyle {
+  public var backgroundColorType: UIKit.UIColor.Pago
+}
+public protocol BaseCellModel : PagoUI.Model {
+  var baseStyle: PagoUI.BaseCellStyle { get set }
+}
+public protocol BaseCellStyle : PagoUI.BaseStyle {
+  var backgroundColorType: UIKit.UIColor.Pago { get set }
+}
+public protocol BaseViewStyle : PagoUI.BaseStyle {
+  var backgroundColorType: UIKit.UIColor.Pago { get set }
+  var tintColorType: UIKit.UIColor.Pago? { get set }
+}
+public protocol BaseStyle {
+}
+public protocol PagoButtonPresenterView : PagoUI.PresenterView {
+  func update(accessibility: PagoUI.PagoAccessibility)
+  func hide(_ hidden: Swift.Bool)
+  func reloadStyle(isTouching: Swift.Bool)
+  func updateUI()
+  func updateTitle(text: Swift.String)
+}
+public protocol PagoButtonPresenterDelegate : AnyObject {
+  func didTap(button: PagoUI.PagoButtonPresenter)
+}
+@_inheritsConvenienceInitializers open class PagoButtonPresenter : PagoUI.BasePresenter {
+  weak public var delegate: PagoUI.PagoButtonPresenterDelegate?
+  public var style: PagoUI.PagoButtonStyle {
+    get
+  }
+  public var borderStyle: PagoUI.BorderStyle? {
+    get
+  }
+  public var accessibility: PagoUI.PagoAccessibility {
+    get
+  }
+  public var hasCustomHighlightStyle: Swift.Bool {
+    get
+  }
+  public var placeholderStyle: PagoUI.HighlightedStyle? {
+    get
+  }
+  public var isSelfSized: Swift.Bool {
+    get
+  }
+  public var customHeight: CoreGraphics.CGFloat? {
+    get
+  }
+  public var customWidth: CoreGraphics.CGFloat? {
+    get
+  }
+  public var index: Swift.Int {
+    get
+  }
+  public var isEnabled: Swift.Bool {
+    get
+    set
+  }
+  public var hasBadge: Swift.Bool {
+    get
+  }
+  public var isTouching: Swift.Bool
+  public var highlightedText: Swift.String? {
+    get
+  }
+  public var backgroundColorType: UIKit.UIColor.Pago {
+    get
+  }
+  public var titleColorType: UIKit.UIColor.Pago {
+    get
+  }
+  public var fontType: UIKit.UIFont.Pago {
+    get
+  }
+  public var hasShadow: Swift.Bool {
+    get
+  }
+  public var cornerRadius: Swift.Int {
+    get
+  }
+  public var model: PagoUI.PagoButtonModel {
+    get
+    set
+  }
+  public var imagePresenter: PagoUI.PagoImageViewPresenter!
+  public var badgePresenter: PagoUI.PagoBadgePresenter?
+  public var hasTitle: Swift.Bool {
+    get
+  }
+  public var title: Swift.String {
+    get
+    set
+  }
+  public var hasImage: Swift.Bool {
+    get
+  }
+  public var dummyImageModel: PagoUI.PagoImageViewModel
+  override public func update(model: PagoUI.Model)
+  public var isHidden: Swift.Bool {
+    get
+    set
+  }
+  public func update(title: Swift.String, highlightedText: Swift.String? = nil)
+  public func update(imageStyle: PagoUI.PagoImageViewStyle)
+  public func loadData()
+  public func reloadData()
+  public func updateBadge(text: Swift.String)
+  public func hideBadge()
+  public func showBadge()
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public protocol PagoStyle {
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func firstSubViewWithType<T>(type: T.Type) -> T? where T : UIKit.UIView
+  @_Concurrency.MainActor(unsafe) public func addLinearGradient(colors: [UIKit.UIColor], gradientLocations: [CoreGraphics.CGPoint])
+  @_Concurrency.MainActor(unsafe) public var width: CoreGraphics.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var height: CoreGraphics.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var borderWidth: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var borderColor: CoreGraphics.CGColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var cornerRadius: CoreGraphics.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public func removeAllSubviews()
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public class func fromNib() -> Self
+  @_Concurrency.MainActor(unsafe) public class func loadFromNib<T>() -> T where T : UIKit.UIView
+}
+public protocol PagoSearchBarDelegate : AnyObject {
+  func searchBarDidSearch(_ text: Swift.String?)
+  func searchBarDidClear()
+  func searchBarDidStart()
+  func searchBarDidStop()
+}
+@objc @_Concurrency.MainActor(unsafe) open class PagoSearchBarView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: PagoUI.PagoSearchBarDelegate?
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoSearchBarPresenter)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @objc deinit
+}
+extension PagoUI.PagoSearchBarView : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+extension PagoUI.PagoSearchBarView : PagoUI.PagoSearchBarPresenterView {
+}
+public protocol PagoCirclePresenterView : PagoUI.PresenterView {
+  func setup(style: PagoUI.PagoCircleStyle)
+  func update(style: PagoUI.PagoUpdateStyle, animName: Swift.String, animationTime: Swift.Double, completion: ((Swift.Bool) -> ())?)
+}
+@_inheritsConvenienceInitializers open class PagoCirclePresenter : PagoUI.BasePresenter {
+  public func update(style: PagoUI.PagoCircleStyleType, animated: Swift.Bool, completion: @escaping (Swift.Bool) -> () = {_ in})
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public struct PagoLineModel : PagoUI.Model {
+  public var style: PagoUI.PagoLineStyle
+  public init(style: PagoUI.PagoLineStyle = PagoLineStyle())
+}
+public struct PagoLineStyle : PagoUI.BaseStyle {
+  public var color: UIKit.UIColor.Pago
+  public var height: CoreGraphics.CGFloat
+  public var leftInset: CoreGraphics.CGFloat
+  public var rightInset: CoreGraphics.CGFloat
+  public init(color: UIKit.UIColor.Pago = .redNegative, height: CoreGraphics.CGFloat = 2, leftInset: CoreGraphics.CGFloat = 0, rightInset: CoreGraphics.CGFloat = 0)
+}
+public struct TableViewSimpleHeaderModel : PagoUI.Model {
+  public var title: Swift.String
+  public var style: PagoUI.TableViewSimpleHeaderStyle
+  public init(title: Swift.String, style: PagoUI.TableViewSimpleHeaderStyle = TableViewSimpleHeaderStyle())
+}
+public struct TableViewSimpleHeaderStyle {
+  public var backgroundColorType: UIKit.UIColor.Pago
+  public var titleFontType: UIKit.UIFont.Pago
+  public var titleColorType: UIKit.UIColor.Pago
+  public init(backgroundColorType: UIKit.UIColor.Pago = UIColor.Pago.lightGrayBackground, titleFontType: UIKit.UIFont.Pago = UIFont.Pago.semiBold13, titleColorType: UIKit.UIColor.Pago = UIColor.Pago.grayTertiaryText)
+}
+public enum PagoNavigationType {
+  case none, simple, detailed, simpleSearchable, detailedSearchable
+  public static func == (a: PagoUI.PagoNavigationType, b: PagoUI.PagoNavigationType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PagoNavigationModel : PagoUI.Model {
+  public var title: Swift.String?
+  public var shortTitle: Swift.String?
+  public var detail: Swift.String?
+  public var image: Swift.String?
+  public var backendImage: PagoUI.BackendImage?
+  public var searchPlaceholder: Swift.String?
+  public var search: Swift.String?
+  public let type: PagoUI.PagoNavigationType
+  public var isSnapping: Swift.Bool
+  public var style: PagoUI.PagoNavigationStyle
+  public var hidesBackButton: Swift.Bool
+  public var rightButtons: [PagoUI.PagoButtonModel]?
+  public init(title: Swift.String? = "", shortTitle: Swift.String? = "", detail: Swift.String? = "", image: Swift.String? = "", backendImage: PagoUI.BackendImage? = nil, searchPlaceholder: Swift.String? = "", search: Swift.String? = "", type: PagoUI.PagoNavigationType, isSnapping: Swift.Bool = false, style: PagoUI.PagoNavigationStyle = PagoNavigationStyle(), hidesBackButton: Swift.Bool = false, rightButtons: [PagoUI.PagoButtonModel]? = nil)
+}
+public struct PagoNavigationStyle {
+  public var textAlignment: UIKit.NSTextAlignment
+  public var titleColor: UIKit.UIColor.Pago
+  public var titleSize: Swift.Float
+  public var detailSize: Swift.Float
+  public let searchSize: Swift.Float
+  public let breathSpace: Swift.Float
+  public var backgroundColor: UIKit.UIColor.Pago
+  public init(textAlignment: UIKit.NSTextAlignment = .left, titleColor: UIKit.UIColor.Pago = .blackBodyText, titleSize: Swift.Float = Float(34), detailSize: Swift.Float = Float(16), backgroundColor: UIKit.UIColor.Pago = .white)
+}
+extension Foundation.Date {
+  #warning("Should fix this")
+  public static var locale: Swift.String {
+    get
+  }
+  public static func - (lhs: Foundation.Date, rhs: Foundation.Date) -> Foundation.TimeInterval
+  public enum PagoDateFormat {
+    case shortDate
+    case normal
+    case shorterDate
+    case shortDateWithYear, dateWithYear
+    case dayWithMonth
+    case hour24Format
+    public static func == (a: Foundation.Date.PagoDateFormat, b: Foundation.Date.PagoDateFormat) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var weekdayName: Swift.String {
+    get
+  }
+  public func toString(format: Foundation.Date.PagoDateFormat, locale: Swift.String? = Date.locale) -> Swift.String
+  public func toString(format: Swift.String, locale: Swift.String? = nil) -> Swift.String
+  public func get(_ components: Foundation.Calendar.Component..., calendar: Foundation.Calendar = Calendar.current) -> Foundation.DateComponents
+  public func get(_ component: Foundation.Calendar.Component, calendar: Foundation.Calendar = Calendar.current) -> Swift.Int
+  public var millisecondsSince1970: Swift.Int64 {
+    get
+  }
+  public init(milliseconds: Swift.Int64)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class PagoButton : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoButtonPresenter)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoButtonPresenter)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+}
+extension PagoUI.PagoButton : PagoUI.PagoButtonPresenterView {
+  @_Concurrency.MainActor(unsafe) public func update(accessibility: PagoUI.PagoAccessibility)
+  @_Concurrency.MainActor(unsafe) public func hide(_ hidden: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func updateTitle(text: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func updateUI()
+  @_Concurrency.MainActor(unsafe) public func reloadStyle(isTouching: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func updateToIsTouchingStyle()
+}
+extension UIKit.UIColor {
+  convenience public init(hexString: Swift.String)
+  public enum Pago : Swift.Equatable, Swift.Hashable {
+    case blackBodyText, darkGraySecondaryText
+    case grayTertiaryText, lightGrayInactive
+    case blueHighlight, lightGrayBackground, dividers
+    case yellowWarning, redNegative
+    case greenPositive, lightGreenBackground, greenBackground
+    case lightBlueBackground, lightBlackBackground, lightYellowBackground, lightRedBackground
+    case clear, white
+    case facebook, google
+    case whiteTransparent
+    case whiteWithAlpha(CoreGraphics.CGFloat)
+    case blackWithAlpha(CoreGraphics.CGFloat)
+    case lightGrayInactiveWithAlpha(CoreGraphics.CGFloat)
+    case yellowSecondaryText, greenSecondaryText
+    case vodafoneBackground, digiBackground, orangeBackground, telekomBackground
+    case blue, lightBlue
+    case info
+    case custom(Swift.String)
+    case skeletonBackground, skeletonInfo
+    public var color: UIKit.UIColor {
+      get
+    }
+    public var cgColor: CoreGraphics.CGColor {
+      get
+    }
+    public func color(withAlpha alpha: CoreGraphics.CGFloat) -> UIKit.UIColor
+    public func cgColor(withAlpha alpha: CoreGraphics.CGFloat) -> CoreGraphics.CGColor
+    public static func == (a: UIKit.UIColor.Pago, b: UIKit.UIColor.Pago) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoSpaceView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoSpacePresenter)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoSpacePresenter)
+  @objc deinit
+}
+extension PagoUI.PagoSpaceView : PagoUI.PagoSpacePresenterView {
+  @_Concurrency.MainActor(unsafe) public func setup(size: CoreGraphics.CGSize)
+}
+public protocol PagoLoadedImageViewPresenterView : PagoUI.PresenterView {
+  func setup(backend: PagoUI.BackendImage)
+  func setup(data: Foundation.Data)
+  func setup(image: UIKit.UIImage.Pago)
+  func setup(labelPlaceholder: PagoUI.PagoLabelPresenter)
+}
+@_inheritsConvenienceInitializers open class PagoLoadedImageViewPresenter : PagoUI.BasePresenter {
+  public var model: PagoUI.PagoLoadedImageViewModel {
+    get
+  }
+  public var accessibility: PagoUI.PagoAccessibility {
+    get
+  }
+  public var style: PagoUI.PagoImageViewStyle {
+    get
+  }
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class PagoMenuRepository : PagoUI.Repository {
+  @objc deinit
+}
+public struct PagoMenuButtonModel : PagoUI.Model {
+  public let title: Swift.String
+  public var badgeCount: Swift.Int?
+  public init(title: Swift.String, badgeCount: Swift.Int?)
+}
+public struct PagoMenuModel : PagoUI.Model {
+  public let buttons: [PagoUI.PagoMenuButtonModel]
+  public let style: PagoUI.PagoMenuStyle
+}
+public struct PagoMenuStyle {
+  public let inactiveLineColorType: UIKit.UIColor.Pago
+  public let activeLineColorType: UIKit.UIColor.Pago
+}
+public struct PagoMenuButtonStyle {
+  public let fontType: UIKit.UIFont.Pago
+  public let colorType: UIKit.UIColor.Pago
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class PagoLabel : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoLabelPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoLabelPresenter)
+  @objc deinit
+}
+extension PagoUI.PagoLabel : PagoUI.PagoLabelPresenterView {
+  @_Concurrency.MainActor(unsafe) public func hideView(isHidden: Swift.Bool)
+}
+public protocol PresenterView : AnyObject {
+  func reloadView()
+}
+public struct PagoSimpleViewModel : PagoUI.Model {
+  public init(style: PagoUI.PagoSimpleViewStyle, accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.image))
+}
+public struct PagoSimpleViewStyle : PagoUI.BaseViewStyle {
+  public var width: CoreGraphics.CGFloat?
+  public var height: CoreGraphics.CGFloat?
+  public var inset: UIKit.UIEdgeInsets
+  public var backgroundColorType: UIKit.UIColor.Pago
+  public var tintColorType: UIKit.UIColor.Pago?
+  public var cornerRadius: Swift.Int
+  public var borderStyle: PagoUI.BorderStyle?
+  public init(width: CoreGraphics.CGFloat? = nil, height: CoreGraphics.CGFloat? = nil, inset: UIKit.UIEdgeInsets = UIEdgeInsets.zero, backgroundColorType: UIKit.UIColor.Pago = .clear, tintColorType: UIKit.UIColor.Pago? = nil, cornerRadius: Swift.Int = 0, borderStyle: PagoUI.BorderStyle? = nil)
+}
+public struct PagoTextFieldStyle {
+  public var isTitleUppercased: Swift.Bool
+  public var backgroundColor: UIKit.UIColor.Pago
+  public let textAnimationDuration: Swift.Double
+  public let textErrorColor: UIKit.UIColor.Pago
+  public let textDetailColor: UIKit.UIColor.Pago
+  public var titleColor: UIKit.UIColor.Pago
+  public var placeholderColor: UIKit.UIColor.Pago
+  public var textFieldColor: UIKit.UIColor.Pago
+  public var textFieldInvalidColor: UIKit.UIColor.Pago
+  public var textFieldDefaultLineColor: UIKit.UIColor.Pago
+  public var textFieldInvalidLineColor: UIKit.UIColor.Pago
+  public var titleFont: UIKit.UIFont.Pago
+  public let detailFont: UIKit.UIFont.Pago
+  public var textFieldFont: UIKit.UIFont.Pago
+  public let textFieldOffset: CoreGraphics.CGFloat
+  public var textFieldContentType: UIKit.UITextContentType
+  public var textFieldAlignment: UIKit.NSTextAlignment
+  public var detailNumberOfLines: Swift.Int
+  public var autocapitalizationType: UIKit.UITextAutocapitalizationType
+  public var keyboardType: UIKit.UIKeyboardType
+  public var isSecureTextEntry: Swift.Bool
+  public var isUserInteractionEnabled: Swift.Bool
+  public var returnKeyType: UIKit.UIReturnKeyType
+  public var borderStyle: PagoUI.BorderStyle?
+  public var isHidden: Swift.Bool
+  public var titleSpace: CoreGraphics.CGFloat
+  public var toolbarButton: UIKit.UIBarButtonItem.SystemItem?
+  public var datePickerStyle: PagoUI.PagoTextFieldDatePickerStyle?
+  public init(isTitleUppercased: Swift.Bool = true, backgroundColor: UIKit.UIColor.Pago = .white, titleColor: UIKit.UIColor.Pago = UIColor.Pago.grayTertiaryText, placeholderColor: UIKit.UIColor.Pago = UIColor.Pago.grayTertiaryText, textFieldColor: UIKit.UIColor.Pago = UIColor.Pago.blackBodyText, textFieldInvalidColor: UIKit.UIColor.Pago = UIColor.Pago.redNegative, textFieldDefaultLineColor: UIKit.UIColor.Pago = UIColor.Pago.dividers, textFieldInvalidLineColor: UIKit.UIColor.Pago = UIColor.Pago.redNegative, titleFont: UIKit.UIFont.Pago = UIFont.Pago.semiBold13, textFieldContentType: UIKit.UITextContentType = UITextContentType(rawValue: ""), textFieldAlignment: UIKit.NSTextAlignment = .left, detailNumberOfLines: Swift.Int = 2, autocapitalizationType: UIKit.UITextAutocapitalizationType = .none, keyboardType: UIKit.UIKeyboardType = .default, isSecureTextEntry: Swift.Bool = false, isUserInteractionEnabled: Swift.Bool = true, returnKeyType: UIKit.UIReturnKeyType = .next, borderStyle: PagoUI.BorderStyle? = nil, isHidden: Swift.Bool = false, titleSpace: CoreGraphics.CGFloat = 8, toolbarButton: UIKit.UIBarButtonItem.SystemItem? = nil, datePickerStyle: PagoUI.PagoTextFieldDatePickerStyle? = nil)
+}
+public struct PagoTextFieldDatePickerStyle {
+  public var current: Foundation.Date
+  public let minDate: Foundation.Date?
+  public let maxDate: Foundation.Date?
+  public init(current: Foundation.Date = Date(), minDate: Foundation.Date? = nil, maxDate: Foundation.Date? = nil)
+}
+extension UIKit.UIViewController {
+  public enum StoryboardName : Swift.String {
+    case main, faq, development, settings, feedback, freemium, referral, card, donate, taxesFees, providers
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) convenience public init(bundle: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) public class func fromMainStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromSettingsStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromReferralStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromFeedbackStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromFreemiumStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromDonateStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromCardStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromTaxesFeesStoryboard() -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromStoryboard(_ name: UIKit.UIViewController.StoryboardName) -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromStoryboard(named name: Swift.String) -> Self
+  @_Concurrency.MainActor(unsafe) public class func fromNib() -> Self
+  @_Concurrency.MainActor(unsafe) public class func instantiateFromNib<T>() -> T where T : UIKit.UIViewController
+  @_Concurrency.MainActor(unsafe) public func isVisible() -> Swift.Bool
+}
+extension PagoUI.BaseViewController {
+  @_Concurrency.MainActor(unsafe) public static func instantiateFromStoryboard(named name: UIKit.UIViewController.StoryboardName, presenter: PagoUI.ViewControllerPresenter) -> Self
+}
+public protocol NavigationBarSetup {
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func getTheParentInsideTheNavigationController() -> UIKit.UIViewController?
+}
+@nonobjc extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func addChild(_ child: UIKit.UIViewController, container: UIKit.UIView, frame: CoreGraphics.CGRect? = nil)
+  @_Concurrency.MainActor(unsafe) public func removeAsChild()
+}
+@_hasMissingDesignatedInitializers open class PagoWebService : PagoUI.Service {
+  public func cleanCache()
+  @objc deinit
+}
+extension UIKit.UIBarButtonItem {
+  public enum Pago {
+    case navigation, action
+    public static func == (a: UIKit.UIBarButtonItem.Pago, b: UIKit.UIBarButtonItem.Pago) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public func updateStyle(style: UIKit.UIBarButtonItem.Pago)
+  @_Concurrency.MainActor(unsafe) public class func closeButton(_ target: Any?, action: ObjectiveC.Selector, tint: UIKit.UIColor.Pago = .lightGrayInactive) -> UIKit.UIBarButtonItem
+  @_Concurrency.MainActor(unsafe) public class func skipButton(_ target: Any?, action: ObjectiveC.Selector) -> UIKit.UIBarButtonItem
+  @_Concurrency.MainActor(unsafe) public class func infoButton(_ target: Any?, action: ObjectiveC.Selector) -> UIKit.UIBarButtonItem
+}
+public struct PagoLabelWCountdownModel : PagoUI.Model {
+  public init(format: PagoUI.PagoLabelWCountdownFormat = .explicit, text: Swift.String, label: PagoUI.PagoLabelModel, endDate: Foundation.Date)
+}
+public enum PagoLabelWCountdownFormat {
+  case explicit, simple
+  public static func == (a: PagoUI.PagoLabelWCountdownFormat, b: PagoUI.PagoLabelWCountdownFormat) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PagoDropDownButtonModel : PagoUI.Model {
+  public var options: [PagoUI.PagoDropDownOptionModel]
+  public var selectedIndex: Swift.Int
+  public let style: PagoUI.PagoDropDownOptionStyle
+  public init(options: [PagoUI.PagoDropDownOptionModel], selectedIndex: Swift.Int)
+}
+public struct PagoDropDownOptionModel : PagoUI.Model {
+  public var title: Swift.String
+  public init(title: Swift.String)
+}
+public struct PagoDropDownOptionStyle {
+  public let animationSpeed: Swift.Double
+  public let optionHeight: Swift.Int
+  public let optionExpandedHeight: Swift.Int
+  public let cornerRadiusExpanded: Swift.Int
+  public let cornerRadius: Swift.Int
+  public let optionWidth: Swift.Int
+  public let optionExpandedWidth: Swift.Int
+  public let backgroundColor: UIKit.UIColor.Pago
+  public let optionFont: UIKit.UIFont.Pago
+  public let highlightedOptionColor: UIKit.UIColor.Pago
+  public let optionColor: UIKit.UIColor.Pago
+  public let selectedOptionColor: UIKit.UIColor.Pago
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseTableViewCell : UIKit.UITableViewCell, PagoUI.PresenterView {
+  @_Concurrency.MainActor(unsafe) open var presenter: PagoUI.BaseCellPresenter!
+  @_Concurrency.MainActor(unsafe) open func reloadView()
+  @available(iOS 3.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseTableViewHeaderFooterCell : UIKit.UITableViewHeaderFooterView, PagoUI.PresenterView {
+  @_Concurrency.MainActor(unsafe) open var presenter: PagoUI.BasePresenter!
+  @_Concurrency.MainActor(unsafe) open func reloadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension Swift.String {
+  public struct AttributedStringReplacement {
+    public init(key: Swift.String, image: UIKit.UIImage, xOffset: CoreGraphics.CGFloat? = nil, yOffset: CoreGraphics.CGFloat, width: CoreGraphics.CGFloat? = nil, height: CoreGraphics.CGFloat)
+  }
+  public func attributedString(replacements: [Swift.String.AttributedStringReplacement]) -> Foundation.NSAttributedString
+  public func attributedString(first: Swift.String.AttributedStringReplacement, second: Swift.String.AttributedStringReplacement) -> Foundation.NSAttributedString
+  public func attributedString(key: Swift.String, image: UIKit.UIImage, imageHeight: CoreGraphics.CGFloat = 20, imageWidth: CoreGraphics.CGFloat? = nil, xOffset: CoreGraphics.CGFloat? = nil, yOffset: CoreGraphics.CGFloat = -4) -> Foundation.NSAttributedString
+}
+extension UIKit.NSTextAttachment {
+  public func updateBounds(height: CoreGraphics.CGFloat, width: CoreGraphics.CGFloat? = nil, xOffset: CoreGraphics.CGFloat? = nil, yOffset: CoreGraphics.CGFloat? = nil)
+  public func setImageHeight(height: CoreGraphics.CGFloat, yOffset: CoreGraphics.CGFloat?)
+}
+public struct PagoGiphyModel : PagoUI.Model {
+  public let mediaId: Swift.String
+  public let loop: Swift.Bool
+  public let isDissmisable: Swift.Bool
+  public let style: PagoUI.PagoGiphyStyle
+  public let accessibility: PagoUI.PagoAccessibility
+  public init(mediaId: Swift.String, loop: Swift.Bool, isDissmisable: Swift.Bool, style: PagoUI.PagoGiphyStyle, accessibility: PagoUI.PagoAccessibility)
+}
+public struct PagoGiphyStyle : PagoUI.BaseStyle {
+  public var size: CoreGraphics.CGSize?
+  public var backgroundColorType: UIKit.UIColor.Pago
+  public var cornerRadius: Swift.Int?
+  public var inset: UIKit.UIEdgeInsets
+  public init(size: CoreGraphics.CGSize?, backgroundColorType: UIKit.UIColor.Pago = .clear, cornerRadius: Swift.Int?, inset: UIKit.UIEdgeInsets = UIEdgeInsets.zero)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoScrollView : UIKit.UIScrollView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoWebView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) public var webview: WebKit.WKWebView!
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoWebPresenter)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoWebPresenter)
+  @objc deinit
+}
+extension PagoUI.PagoWebView : PagoUI.PagoWebPresenterView {
+  @_Concurrency.MainActor(unsafe) public func hideView(isHidden: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func load(request: Foundation.URLRequest)
+  @_Concurrency.MainActor(unsafe) public func setup(loader: PagoUI.PagoAnimationPresenter)
+  @_Concurrency.MainActor(unsafe) public func showLoader()
+  @_Concurrency.MainActor(unsafe) public func hideLoader()
+}
+extension PagoUI.PagoWebView : WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+}
+extension PagoUI.PagoWebView : WebKit.WKScriptMessageHandler {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public enum PagoCheckboxType {
+  case circle, roundedSquare
+  public static func == (a: PagoUI.PagoCheckboxType, b: PagoUI.PagoCheckboxType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PagoCheckBoxSize : Swift.Int {
+  case small, large
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct PagoCheckboxStyle : PagoUI.BaseStyle {
+  public let imageType: UIKit.UIImage.Pago
+  public let imageColorType: UIKit.UIColor.Pago
+  public let fontColorType: UIKit.UIColor.Pago
+  public let fontType: UIKit.UIFont.Pago
+  public let imageSize: PagoUI.PagoCheckBoxSize
+  public var highlightedStyle: PagoUI.HighlightedStyle
+  public init(imageType: UIKit.UIImage.Pago, imageColorType: UIKit.UIColor.Pago, fontColorType: UIKit.UIColor.Pago, fontType: UIKit.UIFont.Pago, imageSize: PagoUI.PagoCheckBoxSize, highlightedStyle: PagoUI.HighlightedStyle = HighlightedStyle(colorType: .blackBodyText, fontType: .regular15, isUnderlined: true))
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class PagoLineView : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoLinePresenter)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoLinePresenter)
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @objc deinit
+}
+public protocol PagoDropDownButtonDelegate : AnyObject {
+  func dropDownDidAppear()
+  func dropDownDidSelect(index: Swift.Int)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoDropDownButton : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: PagoUI.PagoDropDownButtonDelegate?
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoButtonPresenter)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoDropDownButtonPresenter)
+  @_Concurrency.MainActor(unsafe) public func dismiss()
+  @objc deinit
+}
+public protocol Model {
+}
+public struct PagoAccessibility {
+  public init(isAccessibilityElement: Swift.Bool, accessibilityTraits: UIKit.UIAccessibilityTraits, accessibilityLabel: Swift.String? = nil)
+}
+@_hasMissingDesignatedInitializers open class PagoTimer {
+  @objc deinit
+}
+public protocol PagoSpacePresenterView : PagoUI.PresenterView {
+  func setup(size: CoreGraphics.CGSize)
+}
+@_inheritsConvenienceInitializers open class PagoSpacePresenter : PagoUI.BasePresenter {
+  public var model: PagoUI.PagoSpaceModel {
+    get
+  }
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public protocol PagoStackedInfoPresenterView : PagoUI.PresenterView {
+  func reloadStyle(isTouching: Swift.Bool)
+  func addLoadedImageView(presenter: PagoUI.PagoLoadedImageViewPresenter)
+  func addLabel(presenter: PagoUI.PagoLabelPresenter)
+  func addField(presenter: PagoUI.PagoTextFieldPresenter)
+  func addButton(presenter: PagoUI.PagoButtonPresenter)
+  func addAnimation(presenter: PagoUI.PagoAnimationPresenter)
+  func addCircle(presenter: PagoUI.PagoCirclePresenter)
+  func addSpace(presenter: PagoUI.PagoSpacePresenter)
+  func addCountdownLabel(presenter: PagoUI.PagoLabelWCountdownPresenter)
+  func addView(presenter: PagoUI.PagoSimpleViewPresenter)
+  func addStackInfo(presenter: PagoUI.PagoStackedInfoPresenter)
+  func removeAllChildren()
+  func hideView(isHidden: Swift.Bool)
+}
+public protocol PagoStackedInfoPresenterDelegate : AnyObject {
+  func didTap(presenter: PagoUI.PagoStackedInfoPresenter)
+}
+@_inheritsConvenienceInitializers open class PagoStackedInfoPresenter : PagoUI.BasePresenter {
+  weak public var delegate: PagoUI.PagoStackedInfoPresenterDelegate?
+  public var model: PagoUI.PagoStackedInfoModel {
+    get
+    set
+  }
+  public var index: Swift.Int? {
+    get
+  }
+  public var style: PagoUI.PagoStackedInfoStyle {
+    get
+  }
+  public var isTouching: Swift.Bool
+  public var hasUserInteraction: Swift.Bool {
+    get
+  }
+  public var accessibility: PagoUI.PagoAccessibility {
+    get
+    set
+  }
+  public var buttonsPresenters: [PagoUI.PagoButtonPresenter] {
+    get
+  }
+  override public func update(model: PagoUI.Model)
+  public func removeAllChildren()
+  public var isHidden: Swift.Bool {
+    get
+    set
+  }
+  public func addCountdownLabel(presenter: PagoUI.PagoLabelWCountdownPresenter)
+  public func addLabel(presenter: PagoUI.PagoLabelPresenter)
+  #warning("Remove Pago Line. Use only Pago Simple View")
+  #warning("Remove Pago Image. Use only Pago loaded image")
+  public func addAnimation(presenter: PagoUI.PagoAnimationPresenter)
+  public func addCircle(presenter: PagoUI.PagoCirclePresenter)
+  public func addLoadedImage(presenter: PagoUI.PagoLoadedImageViewPresenter)
+  public func addInfoStack(presenter: PagoUI.PagoStackedInfoPresenter)
+  public func addView(presenter: PagoUI.PagoSimpleViewPresenter)
+  public func addField(presenter: PagoUI.PagoTextFieldPresenter)
+  public func addButton(presenter: PagoUI.PagoButtonPresenter)
+  public func addSpace(presenter: PagoUI.PagoSpacePresenter)
+  public func update(index: Swift.Int, model: PagoUI.Model)
+  public func updateInteraction(enabled: Swift.Bool)
+  public func getButtonFromStack(_ stack: PagoUI.PagoStackedInfoPresenter) -> [PagoUI.PagoButtonPresenter]
+  public func handleTap()
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public protocol PagoAnimationPresenterView : PagoUI.PresenterView {
+  func play()
+  func stop()
+}
+@_inheritsConvenienceInitializers open class PagoAnimationPresenter : PagoUI.BasePresenter {
+  public var model: PagoUI.PagoAnimationModel {
+    get
+  }
+  public var style: PagoUI.PagoAnimationStyle {
+    get
+  }
+  public var loop: Swift.Bool {
+    get
+  }
+  public var animation: Swift.String {
+    get
+  }
+  public var accessibility: PagoUI.PagoAccessibility {
+    get
+  }
+  override public func update(model: PagoUI.Model)
+  public func play()
+  public func stop()
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public protocol BaseCoordinator {
+}
+extension UIKit.UIImage {
+  public enum PagoAnimation : Swift.String {
+    case loading
+    case statusLoading
+    case statusError
+    case statusCheckMark
+    case providersNews
+    case onboarding_start_ro
+    case onboarding_start_it
+    case onboarding_start_pl
+    case onboarding_history
+    case onboarding_bills
+    case onboarding_points
+    case onboarding_features_ro
+    case onboarding_features_en
+    case moneyTransfer_succesfulAddedCard
+    case moneyTransfer_intro
+    case moneyTransfer_addDetails
+    case moneyTransfer_contactPermission
+    case moneyTransfer_limit
+    case moneyTransfer_pending
+    case moneyTransfer_finalized
+    case moneyTransfer_cardValidation
+    case moneyTransfer_finalTransfer
+    case moneyTransfer_declineTransfer
+    case moneyTransfer_phone
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum Pago : Swift.String {
+    case none
+    case checkmark
+    case roundedCheckBoxSelected
+    case roundedCheckBoxDeselected
+    case checkBoxSelected
+    case checkBoxDeselected
+    case show
+    case hide
+    case lock
+    case smallQuestionIcon
+    case largeQuestionIcon
+    case calendar
+    case noResult
+    case locationShared
+    case locationScanned
+    case locationRecurring
+    case locationIconChild
+    case locationIconGrandParents
+    case locationIconHome
+    case locationIconOffice
+    case locationIconOther
+    case locationIconParents
+    case locationIconRent
+    case locationIconVacation
+    case close
+    case scanIconSmall
+    case scanIcon
+    case editIcon
+    case pointsIcon
+    case disclosureIcon
+    case masterCard
+    case pciPartnerIcon
+    case btPartnerIcon
+    case romcardPartnerIcon
+    case credoraxPartnerIcon
+    case maestroCard
+    case visaLogo
+    case visaCard
+    case visaWhite
+    case unknownCard
+    case touchId
+    case faceId
+    case keyboardDelete
+    case resetPinIllustration
+    case securityCodeIllustration
+    case faceIdIllustration
+    case touchIdIllustration
+    case instructionsSentIllustration
+    case emptyBillsIllustration
+    case scanArrowHintIllustration
+    case filterIcon
+    case whySyncBillIcon
+    case whySyncPointsIcon
+    case whySyncHistoryIcon
+    case whySyncTapIcon
+    case newRedesignRONewIllustration
+    case newRedesignROStepByStepIllustration
+    case newRedesignROWhatsNewIllustration
+    case historyTabBarIcon
+    case billsTabBarIcon
+    case topUpTabBarIcon
+    case otherTabBarIcon
+    case insurancesTabBarIcon
+    case moreTabBarIcon
+    case moneyTransferTabBarIcon
+    case taxesTabBarIcon
+    case donationsTabBarIcon
+    case donationsIllustration
+    case exploreIllustration
+    case taxesIllustration
+    case carInsurancesIllustration
+    case travelInsurancesIllustration
+    case billsIllustration
+    case topupIllustration
+    case topupAutomatedEmptyStateIllustration
+    case topupRecentEmptyStateIllustration
+    case nextArrow
+    case barCodeIcon
+    case qrCodeIcon
+    case freemiumStar
+    case freemium_payments
+    case freemium_topup
+    case freemium_insurance
+    case freemium_supplier
+    case freemium_points
+    case freemium_functionalities
+    case freemium_support
+    case freemium_alerts
+    case freemium_offers
+    case freemium_taxes
+    case freemium_transfer
+    case freemiumXMasPromoIllustration
+    case infographic2020Illustration
+    case infographicPreviousYearsIllustration
+    case infographicConfettiIllustration
+    case infographic2020Confetti
+    case topUsersIllustration
+    case timeSavedIllustration
+    case pointsIllustration
+    case cardsIllustration
+    case logo
+    case logoWhite
+    case suppliersIllustration
+    case crossroadsIllustration
+    case liveChatIcon
+    case settingsIcon
+    case carAlertIcon
+    case cardsIcon
+    case fingerprintIcon
+    case friendsIcon
+    case languageIcon
+    case locationsIcon
+    case logoutIcon
+    case notificationsIcon
+    case personalDataIcon
+    case pointsSettingsIcon
+    case plVisaPromoSettingsIcon
+    case promoCodeIcon
+    case questionsIcon
+    case securityIcon
+    case thermsIcon
+    case subscriptionsIcon
+    case phoneBookIcon
+    case sendContactMoneyIcon
+    case moneyTransferLimit
+    case upcPLClientCodeIllustration
+    case recurringIcon
+    case deleteIcon
+    case rightIcon
+    case leftIcon
+    case warningQuestionIcon
+    case prepayIntroIllustration
+    case plVisaPromoIcon
+    case genericContactIcon
+    case expireDate
+    case limitAlertIllustration
+    case rcaCampaignIntroIllustration
+    case securityIllustration
+    case subscriptionFreeIcon
+    case subscriptionPremiumIcon
+    case subscriptionLimitlessIcon
+    case historyClockIllustration
+    case featureIcon
+    case premiumProvidersBillsIllustration
+    case btPayMigrate
+    case sliderDragIcon
+    case prepayCampaignIllustration
+    case travelCampaignIllustration
+    case mailedBillIllustration
+    case scanBillIllustration
+    case onlineBillIllustration
+    case otherBillIllustration
+    case paypointBillIllustration
+    case stationBillIllustration
+    case whiteCheckMarkIcon
+    case popupCustomProviderIcon
+    case popupAlerts
+    case popupVipSupport
+    case popupFunctionalities
+    case infoProviderIcon
+    case infoCarAlertIcon
+    case infoSupportIcon
+    case infoTaxesIcon
+    case infoBillsIcon
+    case premiumProviderCampaign
+    case pagoCoin
+    case moneyTransferLimitIcon
+    case moneyTransferCardLimitIcon
+    case moneyTransferFinalizedIcon
+    case moneyTransferCardValidationIcon
+    case moneyTransferSuccsefulCardAddedIcon
+    case moneyTransferPendingIcon
+    case moneyTransferMissingDetailsIcon
+    case moneyTransferRequestIcon
+    case moneyTransferDeclineIcon
+    case moneyTransferComissionIcon
+    case moneyTransferRequestSentIcon
+    case topupDisabledIllustration
+    case rcaDisabledIllustration
+    case genericErrorIllustration
+    case contactsPermissionIllustration
+    case premiumProviderIllustration
+    case accountError
+    case vodaPrize
+    case vodaCampaignSmall
+    case vodaShare
+    case vodaCampaignMedium
+    case playIcon
+    case moneyBagIcon
+    case recommandFacebookLoginIcon
+    case recommandGoogleLoginIcon
+    case recommandAppleLoginIcon
+    case singleBillIllustration
+    case freemiumPremiumStar
+    case accessibilityIllustration
+    case firstScanBillIllustration
+    case reminderIllustration
+    case scanBillCameraPermissionDeniedIllustration
+    case scanBillCameraPermissionIllustration
+    case securePaymentIllustration
+    case mastercardLogo
+    case premiumProvidersExplainedIllustration
+    case settingsMTLegal
+    case settingsMTCampignLegal
+    case switchIcon
+    public var imageName: Swift.String {
+      get
+    }
+    public var image: UIKit.UIImage? {
+      get
+    }
+    public var originalImage: UIKit.UIImage? {
+      get
+    }
+    public var templateImage: UIKit.UIImage? {
+      get
+    }
+    public func image(tinted: UIKit.UIColor.Pago) -> UIKit.UIImage?
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public func tint(with color: UIKit.UIColor) -> UIKit.UIImage?
+}
+extension UIKit.UIImage {
+  convenience public init?(pagoImage: UIKit.UIImage.Pago)
+}
+open class PagoTextFieldPresenter : PagoUI.BasePresenter {
+  public var model: PagoUI.PagoTextFieldModel {
+    get
+    set
+  }
+  public var error: Swift.String? {
+    get
+  }
+  public var text: Swift.String? {
+    get
+    set
+  }
+  public var placeholder: Swift.String {
+    get
+    set
+  }
+  public var hasRightButton: Swift.Bool {
+    get
+  }
+  public var detail: Swift.String? {
+    get
+  }
+  public var isValid: Swift.Bool?
+  public var style: PagoUI.PagoTextFieldStyle {
+    get
+    set
+  }
+  public init(model: PagoUI.PagoTextFieldModel, index: Swift.Int? = nil, isValid: Swift.Bool? = nil, validation: ((Swift.String?) -> (Swift.Bool))? = nil, shouldReplaceString: ((Swift.String, Foundation.NSRange, Swift.String) -> (Swift.Bool))? = nil)
+  public func updateText(text: Swift.String)
+  public func update(placeholder: Swift.String, reload: Swift.Bool = true)
+  public func removeButton()
+  public func addButton(button: PagoUI.PagoButtonModel, reload: Swift.Bool = true)
+  public func update(button: PagoUI.PagoButtonModel)
+  public func update(style: PagoUI.PagoTextFieldStyle, reload: Swift.Bool = true)
+  public func reloadLine()
+  public func validateFieldAndForceErrorsIfAny()
+  public func validateField()
+  public func didUpdate()
+  public func validate(text: Swift.String?)
+  public func showCustomError(message: Swift.String)
+  public func showError()
+  public func hideError()
+  public func shouldReturn()
+  public func shouldDismiss()
+  public func clearData()
+  public func focus()
+  public func dismiss()
+  public func didTapDelete()
+  public func didEndEditing()
+  public func didBeginEditing()
+  public func enable()
+  public func disable()
+  public func forceInvalidStyle()
+  public func forceDefaultStyle()
+  @objc deinit
+}
+extension PagoUI.PagoTextFieldPresenter : PagoUI.PagoButtonPresenterDelegate {
+  public func didTap(button: PagoUI.PagoButtonPresenter)
+}
+public struct PagoSpaceModel : PagoUI.Model {
+  public let size: CoreGraphics.CGSize
+  public init(size: CoreGraphics.CGSize)
+}
+@_hasMissingDesignatedInitializers open class PagoBadgeRepository : PagoUI.Repository {
+  public func getData(predicate: PagoUI.Predicate) -> PagoUI.Model?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseView : PagoUI.PagoView, PagoUI.PresenterView {
+  @_Concurrency.MainActor(unsafe) public func reloadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseCollectionViewCell : UIKit.UICollectionViewCell, PagoUI.PresenterView {
+  @_Concurrency.MainActor(unsafe) public func reloadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseButton : UIKit.UIButton, PagoUI.PresenterView {
+  @_Concurrency.MainActor(unsafe) public func reloadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BasePageControl : UIKit.UIPageControl, PagoUI.PresenterView {
+  @_Concurrency.MainActor(unsafe) public func reloadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) public class func fromNib(presenter: PagoUI.BasePresenter) -> Self
+}
+extension PagoUI.BaseButton {
+  @_Concurrency.MainActor(unsafe) public class func fromNib(presenter: PagoUI.BasePresenter) -> Self
+}
+extension PagoUI.BasePageControl {
+  @_Concurrency.MainActor(unsafe) public class func fromNib(presenter: PagoUI.BasePresenter) -> Self
+}
+public protocol PagoSearchBarPresenterView : PagoUI.PresenterView {
+}
+@_inheritsConvenienceInitializers open class PagoSearchBarPresenter : PagoUI.BasePresenter {
+  public var text: Swift.String? {
+    get
+  }
+  public var placeholder: Swift.String? {
+    get
+  }
+  public var style: PagoUI.PagoSearchBarStyle {
+    get
+  }
+  public var model: PagoUI.PagoSearchBarModel {
+    get
+    set
+  }
+  public func update(text: Swift.String?, placeholder: Swift.String?)
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public struct PagoCircleModel : PagoUI.Model {
+  public var style: PagoUI.PagoCircleStyle
+  public var defaultStyle: PagoUI.PagoUpdateStyle
+  public var highlightStyle: PagoUI.PagoUpdateStyle
+  public var errorStyle: PagoUI.PagoUpdateStyle
+  public var verifiedStyle: PagoUI.PagoUpdateStyle
+  public let accessibility: PagoUI.PagoAccessibility
+  public init(style: PagoUI.PagoCircleStyle, defaultStyle: PagoUI.PagoUpdateStyle, highlightStyle: PagoUI.PagoUpdateStyle, errorStyle: PagoUI.PagoUpdateStyle, verifiedStyle: PagoUI.PagoUpdateStyle)
+}
+public struct PagoUpdateStyle {
+  public let tintColorType: UIKit.UIColor.Pago
+  public var updates: [CoreGraphics.CGFloat]?
+  public let duration: CoreGraphics.CGFloat
+  public init(tintColorType: UIKit.UIColor.Pago, updates: [CoreGraphics.CGFloat]? = nil, duration: CoreGraphics.CGFloat)
+}
+public enum PagoCircleStyleType : Swift.String {
+  case normal, filled, verified, error
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct PagoCircleStyle {
+  public let viewSize: CoreGraphics.CGSize
+  public let circleRadius: CoreGraphics.CGFloat
+  public init(viewSize: CoreGraphics.CGSize, circleRadius: CoreGraphics.CGFloat)
+}
+public struct PagoSearchBarModel : PagoUI.Model {
+  public var text: Swift.String?
+  public var placeholder: Swift.String?
+  public let style: PagoUI.PagoSearchBarStyle
+  public init(text: Swift.String? = nil, placeholder: Swift.String? = nil)
+}
+public struct PagoSearchBarStyle {
+  public let cornerRadius: Swift.Int
+  public let borderColor: UIKit.UIColor.Pago
+  public let borderWidth: Swift.Int
+  public let backgroundColor: UIKit.UIColor.Pago
+  public let placeholderFont: UIKit.UIFont.Pago
+  public let placeholderTextColor: UIKit.UIColor.Pago
+  public let searchFont: UIKit.UIFont.Pago
+  public let searchIndicatorColor: UIKit.UIColor.Pago
+  public let searchTextColor: UIKit.UIColor.Pago
+}
+@_inheritsConvenienceInitializers open class PagoDropDownButtonPresenter : PagoUI.BasePresenter {
+  public var model: PagoUI.PagoDropDownButtonModel {
+    get
+    set
+  }
+  public var style: PagoUI.PagoDropDownOptionStyle {
+    get
+  }
+  public var options: Swift.Int {
+    get
+  }
+  public var selectedIndex: Swift.Int {
+    get
+  }
+  public var optionsPositionY: Swift.Double {
+    get
+  }
+  public var optionsCollapsedHeight: Swift.Double {
+    get
+  }
+  public var optionsExpandedHeight: Swift.Double {
+    get
+  }
+  public func select(index: Swift.Int)
+  public func title(at index: Swift.Int) -> Swift.String?
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public protocol PagoTextViewPresenterView : PagoUI.PresenterView {
+  func hidePlaceholder()
+  func showPlaceholder()
+  func focusTextView()
+  func setupUI(hasCounter: Swift.Bool)
+  func setup(style: PagoUI.PagoTextViewStyle)
+  func setup(width: CoreGraphics.CGFloat)
+  func setup(height: CoreGraphics.CGFloat)
+  func setup(counter: PagoUI.PagoLabelPresenter)
+  func setup(placeholder: PagoUI.PagoLabelPresenter)
+  func didLayoutView()
+}
+public protocol PagoTextViewPresenterDelegate : AnyObject {
+  func textViewPresenterDidUpdate(presenter: PagoUI.PagoTextViewPresenter, text: Swift.String)
+}
+@_inheritsConvenienceInitializers open class PagoTextViewPresenter : PagoUI.BasePresenter {
+  public var text: Swift.String? {
+    get
+  }
+  override public func update(model: PagoUI.Model)
+  public func didLayoutView()
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public protocol PagoNavigationPresenterView : PagoUI.PresenterView {
+  func setup(type: PagoUI.PagoNavigationType)
+  func setup(button: PagoUI.PagoButtonPresenter)
+  func update(offset: Swift.Float)
+  func update(title: Swift.String?, detail: Swift.String?)
+  func startSearch()
+  func stopSearch()
+  func setupView(background: UIKit.UIColor.Pago)
+}
+public protocol PagoNavigationPresenterDelegate : AnyObject {
+  func didUpdateTitleVisibility(isVisible: Swift.Bool)
+  func didSetupNavigation()
+}
+extension PagoUI.PagoNavigationPresenterDelegate {
+  public func didUpdateTitleVisibility(isVisible: Swift.Bool)
+  public func didSetupNavigation()
+}
+@_inheritsConvenienceInitializers open class PagoNavigationPresenter : PagoUI.BasePresenter {
+  public func loadData()
+  public func cancel()
+  override public func update(model: PagoUI.Model)
+  public func update(offset: Swift.Float)
+  public func disableButtons()
+  public func enableButtons()
+  public func offsetSnaps(for type: PagoUI.PagoNavigationType) -> [Swift.Float]
+  public func handleSnap(isCollapsing: Swift.Bool) -> Swift.Float?
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public protocol BaseStackViewControllerPresenterView : PagoUI.BaseScrollableViewControllerPresenterView {
+  func showEmptyScreen()
+  func hideEmptyScreen()
+}
+public protocol BaseScrollableViewControllerPresenterView : PagoUI.ViewControllerPresenterView {
+}
+public protocol ViewControllerPresenterView : PagoUI.PresenterView {
+  func showOverlayLoading()
+  func hideOverlayLoading()
+  func didStartedLoading()
+  func didFinishLoading()
+  func setupNavigation(presenter: PagoUI.PagoNavigationPresenter)
+  func shouldShowTitle(_ showTitle: Swift.Bool)
+  func snapNavigation(offset: Swift.Float?)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class ViewControllerPresenter : PagoUI.BasePresenter {
+  public var baseRepository: PagoUI.Repository?
+  public init(navigation: PagoUI.PagoNavigationPresenter, model: PagoUI.Model = EmptyModel())
+  open func loadData()
+  public func willPopScreen()
+  open func reloadData()
+  public func enableNavigationButtons()
+  public func disableNavigationButtons()
+  @objc deinit
+}
+extension PagoUI.ViewControllerPresenter : PagoUI.PagoNavigationPresenterDelegate {
+  @objc dynamic public func didUpdateTitleVisibility(isVisible: Swift.Bool)
+  @objc dynamic public func didSetupNavigation()
+}
+open class EmptyModel : PagoUI.Model {
+  public init()
+  @objc deinit
+}
+public protocol PagoSimpleViewPresenterView : PagoUI.PresenterView {
+  func setupView(style: PagoUI.PagoSimpleViewStyle)
+}
+@_inheritsConvenienceInitializers open class PagoSimpleViewPresenter : PagoUI.BasePresenter {
+  override public init(model: PagoUI.Model = super)
+  @objc deinit
+}
+public struct PagoBadgeModel : PagoUI.Model {
+  public var badge: PagoUI.PagoLabelModel
+}
+public enum PagoBadgePosition {
+  case bottomLeft, bottomRight
+  case topLeft, topRight
+  public static func == (a: PagoUI.PagoBadgePosition, b: PagoUI.PagoBadgePosition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PagoImageViewModel : PagoUI.Model {
+  public var imageType: UIKit.UIImage.Pago
+  public var style: PagoUI.PagoImageViewStyle
+  public var accessibility: PagoUI.PagoAccessibility
+  public init(imageType: UIKit.UIImage.Pago, style: PagoUI.PagoImageViewStyle, accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: false, accessibilityTraits: UIAccessibilityTraits.image))
+}
+public struct PagoImageViewStyle : PagoUI.BaseViewStyle {
+  public var size: CoreGraphics.CGSize?
+  public var inset: UIKit.UIEdgeInsets
+  public var tintColorType: UIKit.UIColor.Pago?
+  public var backgroundColorType: UIKit.UIColor.Pago
+  public var contentMode: UIKit.UIView.ContentMode
+  public var cornerRadius: Swift.Int
+  public var backgroundCornerRadius: Swift.Int
+  public var borderStyle: PagoUI.BorderStyle?
+  public var alpha: CoreGraphics.CGFloat
+  public init(size: CoreGraphics.CGSize? = nil, inset: UIKit.UIEdgeInsets = UIEdgeInsets.zero, tintColorType: UIKit.UIColor.Pago? = nil, backgroundColorType: UIKit.UIColor.Pago = .clear, contentMode: UIKit.UIView.ContentMode = .scaleAspectFit, cornerRadius: Swift.Int = 0, backgroundCornerRadius: Swift.Int = 0, borderStyle: PagoUI.BorderStyle? = nil, alpha: CoreGraphics.CGFloat = 1.0)
+}
+extension UIKit.UITableViewCell {
+  @_Concurrency.MainActor(unsafe) public class var nib: UIKit.UINib {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public class var reuseIdentifier: Swift.String {
+    get
+  }
+}
+extension UIKit.UICollectionViewCell {
+  @_Concurrency.MainActor(unsafe) public class var nib: UIKit.UINib {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public class var reuseIdentifier: Swift.String {
+    get
+  }
+}
+public struct PagoTextFieldModel : PagoUI.Model {
+  public var text: Swift.String? {
+    get
+    set
+  }
+  public var placeholder: Swift.String
+  public var detail: Swift.String?
+  public var button: PagoUI.PagoButtonModel?
+  @available(*, deprecated, message: "Use validationRules instead")
+  public var error: Swift.String?
+  public var validationRules: [PagoUI.ValidationModel]?
+  public var style: PagoUI.PagoTextFieldStyle
+  public var accessibility: PagoUI.PagoAccessibility
+  public var didUpdateAccessibility: ((PagoUI.PagoAccessibility) -> ())?
+  public init(text: Swift.String? = nil, placeholder: Swift.String, detail: Swift.String? = nil, button: PagoUI.PagoButtonModel? = nil, error: Swift.String? = nil, validationRules: [PagoUI.ValidationModel]? = nil, style: PagoUI.PagoTextFieldStyle = PagoTextFieldStyle(), accessibility: PagoUI.PagoAccessibility = PagoAccessibility(isAccessibilityElement: true, accessibilityTraits: UIAccessibilityTraits.button))
+}
+public protocol Repository {
+  func getData(predicate: PagoUI.Predicate) -> PagoUI.Model?
+  func getData() -> PagoUI.Model?
+  func getData(predicate: PagoUI.Predicate, completion: @escaping (PagoUI.Model) -> ())
+  func getData(completion: @escaping (PagoUI.Model) -> ())
+}
+extension PagoUI.Repository {
+  public func getData(predicate: PagoUI.Predicate) -> PagoUI.Model?
+  public func getData() -> PagoUI.Model?
+  public func getData(predicate: PagoUI.Predicate, completion: @escaping (PagoUI.Model) -> ())
+  public func getData(completion: @escaping (PagoUI.Model) -> ())
+}
+public protocol Predicate {
+}
+public protocol Service {
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoStackView : UIKit.UIStackView {
+  @_Concurrency.MainActor(unsafe) public func addVerticalSpace(_ height: CoreGraphics.CGFloat, color: UIKit.UIColor? = nil)
+  @_Concurrency.MainActor(unsafe) public func addHorizontalSpace(_ width: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func addSeparator(_ width: CoreGraphics.CGFloat = 1, _ color: UIKit.UIColor.Pago = .dividers)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public protocol PagoTextFieldDelegate : AnyObject {
+  func shouldLayoutIfNeededParent()
+  func didUpdateUI()
+}
+extension PagoUI.PagoTextFieldDelegate {
+  public func didUpdateUI()
+  public func shouldLayoutIfNeededParent()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PagoTextField : PagoUI.BaseView {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: PagoUI.PagoTextFieldDelegate?
+  @_Concurrency.MainActor(unsafe) weak public var textFieldDelegate: UIKit.UITextFieldDelegate?
+  @_Concurrency.MainActor(unsafe) public init(presenter: PagoUI.PagoTextFieldPresenter)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func setup(presenter: PagoUI.PagoTextFieldPresenter)
+  @_Concurrency.MainActor(unsafe) override public func reloadView()
+  @objc deinit
+}
+extension PagoUI.PagoTextField : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+}
+extension PagoUI.PagoTextField {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func focus()
+}
+public struct PagoWebModel : PagoUI.Model {
+  public let urlString: Swift.String
+  public var urlRequest: Foundation.URLRequest? {
+    mutating get
+    set
+  }
+  public var loaderModel: PagoUI.PagoAnimationModel {
+    mutating get
+    set
+  }
+  public init(urlString: Swift.String)
+}
+extension PagoUI.PagoButtonModel.Pago : Swift.Equatable {}
+extension PagoUI.PagoButtonModel.Pago : Swift.Hashable {}
+extension PagoUI.PagoImagePlaceholderType : Swift.Equatable {}
+extension PagoUI.PagoImagePlaceholderType : Swift.Hashable {}
+extension UIKit.UIFont.Pago : Swift.Equatable {}
+extension UIKit.UIFont.Pago : Swift.Hashable {}
+extension PagoUI.PagoNavigationType : Swift.Equatable {}
+extension PagoUI.PagoNavigationType : Swift.Hashable {}
+extension Foundation.Date.PagoDateFormat : Swift.Equatable {}
+extension Foundation.Date.PagoDateFormat : Swift.Hashable {}
+extension UIKit.UIViewController.StoryboardName : Swift.Equatable {}
+extension UIKit.UIViewController.StoryboardName : Swift.Hashable {}
+extension UIKit.UIViewController.StoryboardName : Swift.RawRepresentable {}
+extension UIKit.UIBarButtonItem.Pago : Swift.Equatable {}
+extension UIKit.UIBarButtonItem.Pago : Swift.Hashable {}
+extension PagoUI.PagoLabelWCountdownFormat : Swift.Equatable {}
+extension PagoUI.PagoLabelWCountdownFormat : Swift.Hashable {}
+extension PagoUI.PagoCheckboxType : Swift.Equatable {}
+extension PagoUI.PagoCheckboxType : Swift.Hashable {}
+extension PagoUI.PagoCheckBoxSize : Swift.Equatable {}
+extension PagoUI.PagoCheckBoxSize : Swift.Hashable {}
+extension PagoUI.PagoCheckBoxSize : Swift.RawRepresentable {}
+extension UIKit.UIImage.PagoAnimation : Swift.Equatable {}
+extension UIKit.UIImage.PagoAnimation : Swift.Hashable {}
+extension UIKit.UIImage.PagoAnimation : Swift.RawRepresentable {}
+extension UIKit.UIImage.Pago : Swift.Equatable {}
+extension UIKit.UIImage.Pago : Swift.Hashable {}
+extension UIKit.UIImage.Pago : Swift.RawRepresentable {}
+extension PagoUI.PagoCircleStyleType : Swift.Equatable {}
+extension PagoUI.PagoCircleStyleType : Swift.Hashable {}
+extension PagoUI.PagoCircleStyleType : Swift.RawRepresentable {}
+extension PagoUI.PagoBadgePosition : Swift.Equatable {}
+extension PagoUI.PagoBadgePosition : Swift.Hashable {}
