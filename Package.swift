@@ -15,21 +15,20 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/alexruperez/lottie-ios.git", branch: "master"),
-        .package(url: "https://github.com/Giphy/giphy-ios-sdk", exact: "2.1.20")
+        .package(url: "https://github.com/alexruperez/lottie-ios.git", branch: "master")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .binaryTarget(
             name: "PagoUISDK",
-            path: "PagoUISDK.xcframework"),
+            url: "https://github.com/PagoApp/ios-ui-spm/releases/download/0.0.3/PagoUISDK.xcframework.zip",
+            checksum: "1e9afad586300bc8de6d1f682624a41fe56b1a3247c70fa84c45f1b06c85f935"),
         .target(
             name: "PagoUI",
             dependencies: [
                 .target(name: "PagoUISDK"),
-                .product(name: "Lottie", package: "lottie-ios"),
-                .product(name: "GiphyUISDK", package: "giphy-ios-sdk")
+                .product(name: "Lottie", package: "lottie-ios")
             ]),
         .testTarget(
             name: "PagoUITests",

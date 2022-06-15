@@ -1,4 +1,0 @@
-framework module PagoUISDK {
-  header "PagoUISDK-Swift.h"
-  requires objc
-}

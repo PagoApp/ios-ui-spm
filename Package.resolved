@@ -1,24 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "giphy-ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Giphy/giphy-ios-sdk",
-      "state" : {
-        "revision" : "21d4e779befedb72a3a2bc2cdae95603514ac477",
-        "version" : "2.1.20"
-      }
-    },
-    {
-      "identity" : "libwebp-xcode",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SDWebImage/libwebp-Xcode",
-      "state" : {
-        "revision" : "2b3b43faaef54d1b897482428428357b7f7cd08b",
-        "version" : "1.2.1"
-      }
-    },
-    {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/alexruperez/lottie-ios.git",
